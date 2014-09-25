@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Parsing responseText</title>
+		<style type="text/css">
+			body {
+				padding: 40px 0 0 30px;
+				font-size: 30px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function sendRequest(fileName) {
+				xhr = new XMLHttpRequest();
+				if (xhr) {
+					xhr.onreadystatechange = function() {
+						displayResponse(xhr);
+					};
+					xhr.open("GET", fileName, true);
+					xhr.send(null);
+				}
+			}
+			
+			function displayResponse(xhr) {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200 || xhr.status == 304) {
+						
+						var splitResponse = xhr.responseText.split('+');
+						for(var i=0; i<splitResponse.length; i++) {
+							console.log(i + ": " + splitResponse[i]);
+						}
+						
+						var responseDiv = document.getElementById('responseDiv');
+						responseDiv.innerHTML = "";
+						
+						for(var i=0; i<splitResponse.length; i++) {
+							responseDiv.innerHTML += "<h3>" + splitResponse[i] + "</h3>";
+						}
+					}
+			  	}
+			}
+
+			window.onload = function() {
+				var anchor = document.getElementsByTagName('a');
+				for(var i=0; i<anchor.length; i++) {
+					anchor[i].addEventListener('click', function(e) {
+						e.preventDefault();
+						sendRequest(this.href);
+					}, false);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>People</h1>
+		<ul>
+			<li>
+				<a href="data.txt">Faculty Names</a>
+			</li>
+		</ul>
+		<div id="responseDiv" />
+	</body>
+</html>

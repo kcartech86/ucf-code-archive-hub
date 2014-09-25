@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DOM LAB 2- Kyle Cartechine</title>
+
+<style type="text/css">
+body{
+	margin:o;
+	padding:0;
+	background-color:#999;
+}
+#container{
+	width:800px;
+	hight:800px;
+	background-color:#C96;
+	padding: 15px;
+	margin:auto;
+}
+ul{
+	list-style-type:none;
+	padding: 0px;
+	margin: 0;
+}
+ul li{
+	display: inline;
+}
+ul li a img{
+	border:1px solid #888;
+	padding:5px;
+	background-color:#FFF;	
+}
+ul li a image:hover{
+	background-color:#900;
+	border:2px dashed #FF0;
+}
+#placeholderDiv{
+	padding:10px;
+}
+#placeholderDiv img{
+	border:2px solid #900;
+	
+}
+
+</style>
+<script type="text/javascript">
+	function showImage(event){
+		var placeholderDiv = document.getElementById('placheolderDiv');
+		
+		while(placeholderDiv.hasChildNodes()){
+			placeholderDiv.removeChild(placeholderDiv.lastChild);
+		}
+		var anchorHref = this.getAttribute('href');
+		
+		var newImgElement = document.createElement('img');
+		newImgElement.setAttribute('src', anchorHref);
+		newImgElement.setAttribute('alt', 'The full size image after clicked');
+		
+	}
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+        <ul>   
+            <li>
+              	<a href="images/flying-car-593.jpg" title="picture1"> <img src="images/flying-car-593_tn.jpg" alt="picture1" /> </a>
+            </li>
+            <li>
+            	<a href="images/flying-car-m400.jpg" title="picture1"> <img src="images/flying-car-m400_tn.jpg" alt="picture1" /> </a>
+            </li>
+            <li>
+            	<a href="images/flyingCar-article.jpg" title="picture1"> <img src="images/flyingCar-article_tn.jpg" alt="picture1" /> </a>
+            </li>
+            <li>
+            	<a href="images/high-road-aerocar.jpg" title="picture1"> <img src="images/high-road-aerocar_tn.jpg" alt="picture1" /> </a>
+            </li>
+            <li>
+            	<a href="images/log200711a.jpg" title="picture1"> <img src="images/log200711a_tn.jpg" alt="picture1" /> </a>
+            </li>
+            <li>
+            	<a href="images/saucercarSplash_450x325.jpg" title="picture1"> <img src="images/saucercarSplash_450x325_tn.jpg" alt="picture1" /> </a>
+            </li>
+        </ul>
+    </div>
+    <p>Please Select An Image</p>
+    <div id="placeholder">
+    </div>
+
+</body>
+</html>

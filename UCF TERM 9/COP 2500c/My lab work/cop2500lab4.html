@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kyle Cartechine Lab 4</title>
+
+<style type="text/css">
+    h1{
+        color:blue;
+        background-color:black;
+        font-size:20px;
+        padding:10px;
+        text-align:center;
+        }
+    h2{
+        color:black;
+        background-color:red;
+        font-size:20px;
+        padding:10px;
+        text-align:center;
+    }
+	#w3pic{
+		padding: 100px;
+		text-align: center;
+	}
+</style>
+
+<script type="text/javascript">
+	var age;
+		
+	window.onload = function(){
+		var algo_ttl1 = document.createElement("h1");
+		var fare01 = document.createTextNode("Train Fare Calculator");
+		var container = document.getElementById("container");
+		algo_ttl1.appendChild(fare01);
+		container.appendChild(algo_ttl1);
+		
+		age = parseInt(prompt("Please enter your age so your train fare can be determined: "));	
+		
+		if (age > 55){
+			alert("You pay the senior fare.");
+			var p1 = document.createElement("p");		
+			var p1_txt = document.createTextNode("You entered the age: "+age+". You pay the senior fare.");
+			p1.appendChild(p1_txt);
+			container.appendChild(p1);
+		}
+		else{
+			alert("You pay the regular adult fare.");
+			p1 = document.createElement("p");
+			p1_txt = document.createTextNode("You entered the age: "+age+". You pay the regular adult fare.");
+			p1.appendChild(p1_txt);
+			container.appendChild(p1);
+		}
+		
+		var algo_ttl2 = document.createElement("h2");
+		var fare02 = document.createTextNode("Train Fare Calculator II");
+		var container = document.getElementById("container");
+		algo_ttl2.appendChild(fare02);
+		container.appendChild(algo_ttl2);
+		
+		if(age > 0 && age <= 12){
+			alert("You pay child's fare!");
+			var p2= document.createElement("p");		
+			var p2_txt= document.createTextNode("You entered the age: "+age+". You pay child's fare!");
+			p2.appendChild(p2_txt);
+			container.appendChild(p2);
+		}
+		else{
+			if(age > 12 && age < 60){
+				alert("You pay the regular adult fare.");
+				p2 = document.createElement("p");		
+				p2_txt = document.createTextNode("You entered the age: "+age+". You pay the senior fare.");
+				p2.appendChild(p2_txt);
+				container.appendChild(p2);
+
+			}
+			else{
+				alert("You pay the senior fare.");
+				p2 = document.createElement("p");		
+			    p2_txt = document.createTextNode("You entered the age: "+age+". You pay the senior fare.");
+				p2.appendChild(p2_txt);
+				container.appendChild(p2);
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body>
+    <div id="container">
+    
+    </div>
+    
+</body>
+</html>

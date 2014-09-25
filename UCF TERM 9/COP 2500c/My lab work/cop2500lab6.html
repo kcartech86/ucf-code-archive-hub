@@ -1,0 +1,127 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+		Kyle Cartechine - Lab 6 - COP2500
+	</title>
+
+	<!-- Kyle Cartechine --> 
+	<!-- kcartechine@knights.ucf.edu --> 
+	<!-- Lab 06 -->
+	<style type="text/css">
+		body
+		{
+		font-family: monospace, Helvetica, arial, sans-serif;
+		}
+		
+		input
+		{
+			text-align:center;
+			
+		}
+		
+		button
+		{
+			display:inline;
+			margin:10px auto 10px auto;
+			width:20%;
+			padding:4px;
+			font-weight: bold;
+			color:#ffffff;
+			background-color: #000000;
+			border:2px solid #202020;
+			border-radius:12px;
+			-moz-border-radius:12px; /* Firefox 3.6 and earlier */
+		}
+		
+		#content
+		{	width:150px;
+			height:200px;
+			padding: 10px;
+			background-color:#909090;
+			border:2px solid #363636;
+			border-radius:25px;
+			-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+		}
+		
+		#buttons
+		{
+			text-align:center;
+			margin:auto;
+			width: 100%;
+		}
+		
+		p{
+			text-align:center;
+		}
+		
+	
+	</style>
+	
+	<script type="text/javascript">
+
+		function add()
+		{
+			var x, y, result;
+			x = parseFloat(document.getElementById('left').value);
+			y = parseFloat(document.getElementById('right').value);
+			//alert("X is: "+x+" for left input.");
+			//alert("Y is: "+y+" for left input.");
+			result = x + y;
+			//alert("Result is: "+result+" for answer.");
+			document.getElementById('answer').value = result;
+		}
+		function subtract()
+		{
+			var x, y, result;
+			x = parseFloat(document.getElementById('left').value);
+			y = parseFloat(document.getElementById('right').value);
+			//alert("X is: "+x+" for left input.");
+			//alert("Y is: "+y+" for left input.");
+			result = x - y;
+			//alert("Result is: "+result+" for answer.");
+			document.getElementById('answer').value = result;
+		}
+		function multiply()
+		{
+			var x, y, result;
+			x = parseFloat(document.getElementById('left').value);
+			y = parseFloat(document.getElementById('right').value);
+			//alert("X is: "+x+" for left input.");
+			//alert("Y is: "+y+" for left input.");
+			result = x * y;
+			//alert("Result is: "+result+" for answer.");
+			document.getElementById('answer').value = result;
+		}
+		function divide()
+		{
+			var x, y, result;
+			x = parseFloat(document.getElementById('left').value);
+			y = parseFloat(document.getElementById('right').value);
+			//alert("X is: "+x+" for left input.");
+			//alert("Y is: "+y+" for left input.");
+			result = x / y;
+			//alert("Result is: "+result+" for answer.");
+			document.getElementById('answer').value = result;
+		}
+		
+	</script>
+</head>
+
+<body>
+	<div id="content">
+	
+		<input type = "text" id = "left" >
+		<div id="buttons">
+			<button onclick="add()"> + </button>
+			<button onclick="subtract()"> - </button>
+			<button onclick="multiply()"> * </button>
+			<button onclick="divide()"> / </button>
+		</div>
+			<input type = "text" id = "right" >
+		<p>Answer:</p>
+		<input type = "text" id = "answer" >
+	</div>
+		
+</body>
+</html>

@@ -1,0 +1,325 @@
+<?php
+	session_start();
+	
+// STARTER KIT for Battleship - DIG 3134 - Spring 2011 - Moshell
+// Derived from the Wall War prototype
+
+$Testnumber=4; // use 3 to see the Ship's methods at work.
+
+$Gridsize=16;
+$Imagewidth=300; // pixels
+$Cellwidth=$Imagewidth/$Gridsize;
+
+$Viewall=0;
+
+$Login="class"; 
+$Password="project";
+
+define('BLACK','#000000');
+define('GOLD','#AAAA33');
+define('BLUE','#0000FF');
+define('WHITE','#FFFFFF');
+
+define('GREY','#888888');
+
+define ('RED','#FF0000');
+#logprint:
+function logprint($what,$when)
+{global $Testnumber;
+	if ($when==$Testnumber)
+		print "LP:$what <br />";
+}
+#makeheader:
+function makeheader()
+{ global $Cellwidth;
+
+	print '
+	  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Battleship - Starter Kit</title>';
+
+
+print "	<style type='text/css'>
+			.mtable td 
+			{
+				width:$Cellwidth"."px; height:$Cellwidth"."px;
+				color:RED
+			}
+		</style>";
+
+print '</head>
+<body><form method="post">
+';
+} # makeheader
+
+function preparegrid()
+{global $Grid, $Gridsize, $Visible;
+
+	for ($y=0; $y<=$Gridsize+1; $y++)
+	{
+		for ($x=0; $x<=$Gridsize+1; $x++)
+		{
+			if ($x==0) // left margin
+			{
+				$Grid[$x][$y]=BLUE;
+				$Visible[$x][$y]=1;
+			}
+			else if ($y==0) // top margin
+			{
+				$Grid[$x][$y]=BLUE;
+				$Visible[$x][$y]=1;
+			}
+			else if (($x==$Gridsize+1)||($y==$Gridsize+1))
+			{	// right margin and bottom margin
+				$Grid[$x][$y]=BLUE;
+				$Visible[$x][$y]=1;
+			}
+			else	// fill the dude with white!
+			{
+				$Grid[$x][$y]=WHITE;
+				$Visible[$x][$y]=0;
+			}
+				
+		} # x loop
+	} # y loop
+} # preparegrid
+
+#drawgrid:
+function drawgrid()
+{global $Grid,$Gridsize,$Visible,$Viewall;
+
+	$v11=$Visible[1][1];
+	logprint("v11=$v11",2);
+	
+	$result='<table class="mtable" border=1>';
+	for ($y=0; $y<=$Gridsize+1; $y++)
+	{
+		$result.="<tr>";
+		for ($x=0; $x<=$Gridsize+1; $x++)
+		{
+			if ($Visible[$x][$y] && $x<=$Gridsize && $y<=$Gridsize)
+				$marker='!';
+			else
+				$marker='';
+			if ($x==0 && $y<=$Gridsize) $char=$y;
+			else if ($y==0 && $x<=$Gridsize) $char=chr($x+64);
+			else if ($x<=$Gridsize && $y<=$Gridsize) // && $Grid[$x][$y]==WHITE)
+				$char="<input type='radio' name='fillhere' value='$x.$y' />$marker";
+			else 
+				$char=$marker; // "&nbsp;";
+			
+			if (($Visible[$x][$y])||($Viewall))
+				$color=$Grid[$x][$y];
+			else
+				$color=WHITE;
+				
+			$result.="<td align='center' style='background-color:$color'>$char</td>";
+		} # x loop
+		$result.="</tr>";
+	} # y loop
+	$result.="</table>";
+	print $result;
+} #drawgrid
+
+#drawinputs:
+function drawinputs()
+{
+	print "
+		<input type='submit' name='action' value='CLEAR'>
+		<input type='submit' name='action' value='BLACK'>
+		<input type='submit' name='action' value='GOLD'>
+		<input type='submit' name='action' value='RESTORE'>
+		<input type='submit' name='action' value='MAKE VISIBLE'>
+		<input type='submit' name='action' value='MAKE INVISIBLE'>
+		<input type='submit' name='action' value='RADAR ON'>
+		<input type='submit' name='action' value='RADAR OFF'>
+		
+		<br /><br />
+		<input type='submit' name='action' value='MAKE SHIP'>
+		<input type='submit' name='action' value='SHOW SHIP'>
+		
+		";
+}
+
+////////// CLASS DEFINITIONS
+
+class Ship
+{
+	private $shipnumber, $xloc, $yloc, $orientation, $type;
+	
+	function __construct($numin, $xin,$yin, $orientin, $typein)
+	{
+		$this->shipnumber=$numin;
+		$this->xloc=$xin;
+		$this->yloc=$yin;
+		$this->orientation=$orientin;
+		$this->type=$typein;
+	}
+	
+	function describe()
+	{
+		print "shipnumber:$this->shipnumber <br />
+				x, y: $this->xloc $this->yloc <br />
+				orientation: $this->orientation <br />
+				type: $this->type <br />";
+	} # describe
+	
+	function isfloating()
+	{
+		global $Grid;
+		$y=$this->yloc;
+		for ($x=$this->xloc;$x<=$this->xloc+4; $x++)
+		{
+			logprint ("isfloating: x=$x, y=$y, grid=".$Grid[$x][$y],3);
+			if ($Grid[$x][$y]==$this->type)
+				$count++;
+		}
+		logprint ("isfloating: count=$count",3);
+		if ($count>=3)
+			return 1;
+		else
+			return 0;
+	} # isfloating
+	
+	#mycolorcount:
+	function mycolorcount()
+	{
+		global $Grid;
+		$y=$this->yloc;
+		for ($x=$this->xloc;$x<=$this->xloc+4; $x++)
+		{
+			if ($Grid[$x][$y]==$this->type)
+				$count++;
+		}
+		logprint ("mycolorcount: count=$count",3);
+		return $count;
+	} # mycolorcount
+	
+	#myspectrum:
+	function myspectrum()
+	{
+		global $Grid, $Testnumber;
+		$y=$this->yloc;
+		for ($x=$this->xloc;$x<=$this->xloc+4; $x++)
+		{
+			$spectrum[$Grid[$x][$y]]++;
+		}
+		logprint ("my spectrum:",3);
+		
+		if ($Testnumber==3)
+		{
+			print_r ($spectrum); // print_r prints an entire array
+			print "<br />";
+		}
+			
+		return $spectrum;
+	} # myspectrum;
+	
+	function isfloating2()
+	{
+		$spectrum=$this->myspectrum();
+		if ($spectrum[$this->type]>=3)
+			return 1;
+		else
+			return 0;
+
+		// you can also use:  
+		//		return ($spectrum[$this->type]>=3);
+		//		because the (expression) is either true (1) or false (0)
+	} #isfloating2
+	
+} # Ship
+
+/////// MAIN PROGRAM ///////
+
+	makeheader();
+	
+	$action=$_POST['action'];
+	$Grid=$_SESSION['Grid'];
+	$Visible=$_SESSION['Visible'];
+
+	$Shipone=$_SESSION['Shipone'];
+
+	$Viewall=$_SESSION['Viewall'];
+	
+	print "<center><h3>Battleship Starter Kit</h3>";
+		
+	if ((!$action)||($action=='CLEAR'))
+		preparegrid();	
+	else // these commands need the X, Y coordinates
+	{
+			
+		$f=$_POST['fillhere'];
+		if ($f)
+		{
+			$fparts=explode('.',$f);
+			$x=$fparts[0];
+			$y=$fparts[1];
+		}
+		
+		if ($action=='BLACK')
+		{
+			$color=BLACK;
+			$Grid[$x][$y]=$color;
+		}
+		else if ($action=='GOLD')
+		{
+			$color=GOLD;
+			$Grid[$x][$y]=$color;
+		}
+		else if ($action=='MAKE VISIBLE')
+		{
+			$Visible[$x][$y]=1;
+			logprint("vis $x $y set",2);
+		}
+		else if ($action=='MAKE INVISIBLE')
+		{
+			$Visible[$x][$y]=0;
+		}
+		else if ($action=='RADAR ON')
+		{
+			$Viewall=1;
+		}
+		else if ($action=='RADAR OFF')
+		{
+			$Viewall=0;
+		}
+		else if ($action=='MAKE SHIP')
+		{
+			$Shipone=new Ship(1,2,2,"horizontal","#000000");
+		}
+		else if ($action=='SHOW SHIP')
+		{
+			print "/////// Describe the Ship: ////////<br />";
+			$Shipone->describe();
+			print "/////// the 'isfloating' method says: ////////<br />";
+			print $Shipone->isfloating();
+			print "<br /> /////// the 'mycolorcount' method says: ////////<br />";
+			print $Shipone->mycolorcount();
+			print "<br />/////// the 'isfloating2' method says: ////////<br />";
+			print $Shipone->isfloating2();		
+		}
+	
+	} # 
+	
+	drawgrid();
+	
+	if ($Viewall)
+		print "Radar is ON";
+	else
+		print "Radar is OFF";
+	print "<br />";
+	
+	drawinputs();
+	
+	$_SESSION['Shipone']=$Shipone;
+	
+	$_SESSION['Viewall']=$Viewall;
+	$_SESSION['Grid']=$Grid; // Store the grid and the visibility for the next cycle
+	$_SESSION['Visible']=$Visible;
+?>
+</form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Fanatstic Form</title>
+
+<script type="text/javascript">
+ 
+ 	function setupForm() {
+		document.myform.onsubmit = processForm;
+ 	}
+ 
+ 	function processForm() {
+ 	
+	if(document.myform.first_name.value.length == 0) {
+ 		alert("first name is invalid!");
+	}
+		
+	if(!document.myform.last_name.value.match(/[A-Z]/)){
+		alert("capitalize last name!");
+	}
+		
+	
+
+ 	return false;
+ 	}
+	window.onload = setupForm;
+    
+</script> 
+
+</head>
+
+<body>
+<form action="process.php" method="post" name="myform"> 
+
+
+<form name="myform">
+            <fieldset>
+                <legend>User Info</legend>
+                <label for="first_name">First Name:</label>
+                <input id="first_name" name="first_name" value="" type="text">
+                <label for="last_name">Last Name:</label>
+                <input id="last_name" name="last_name" value="" type="text">
+                <label for="email">E-mail:</label>
+                <input id="email" name="email" value="" type="text">
+                
+                <legend>Your Favorite Color:</legend>
+                <div>
+					<label for="red">Red</label>
+                	<input id="red" name="fav_color" value="red" type="radio">
+				</div>
+                <div>
+					<label for="blue">Blue</label>
+                	<input id="blue" name="fav_color" value="blue" type="radio">
+				</div>
+                <div>
+					<label for="black">Black</label>
+                	<input id="black" name="fav_color" value="black" type="radio">
+				</div>
+                                
+                <legend>Your Favorite Number:</legend>
+                <label for="fav_num">Number:</label>
+                <input id="fav_num" name="fav_num" value="" type="text">
+                
+                <div>
+					<input id="submit" name="submit" value="Click to Submit" type="submit">
+				</div>
+                
+            </fieldset>
+        </form>
+
+</body>
+</html>

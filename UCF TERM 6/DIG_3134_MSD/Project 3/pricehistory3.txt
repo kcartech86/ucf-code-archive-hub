@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Pricehistory Demo Program - Version 3</title>
+</head>
+
+<body>
+<?php
+// Version 3 - 23 March 2011 - Moshell
+
+// Version 1 had the problem that it assumed that the last record would always
+// 	have itemnumber equal to the rowcount of the table. Not true! So I added
+//  a function called largest_itemnumber, to retrieve that information.
+//
+// Version 2 made up a brute force system to search for the largest item number
+//
+// Version 3 uses some smarts, and the MAX function in SQL
+//	Also it demonstrates the 'count' function in SQL.
+//
+$Login="class"; 
+$Password="project";
+$Testnumber=2;
+
+#logprint:
+function logprint($what,$when)
+{global $Testnumber;
+	if ($when==$Testnumber)
+		print "LP:$what <br />";
+}
+#makeheader:
+function makeheader()
+{ global $Cellwidth;
+
+	print '
+	  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Wall War - Starter Kit</title>';
+
+
+print "	<style type='text/css'>
+			.mtable td 
+			{
+				width:$Cellwidth"."px; height:$Cellwidth"."px;
+				color:WHITE
+			}
+		</style>";
+
+print '</head>
+<body><form method="post">
+';
+} # makeheader
+
+function drawinputs()
+{
+	print "
+		<input type='text' name='item'> Item Name </br />
+		<input type='text' name='price'> Item Price (like 3.95) <br />
+		<input type='submit' name='action' value='ENTER ITEM'>
+		<input type='submit' name='action' value='SHOW HISTORY'>
+		<input type='submit' name='action' value='SHOW COUNT'>
+		<input type='submit' name='action' value='COUNT DISTINCT PRICES'>
+		<input type='submit' name='action' value='SHOW AVERAGE PRICES'>
+		<input type='submit' name='action' value='CLEAR HISTORY'>
+		<input type='submit' name='action' value='DEMO LIKE'>
+		<input type='submit' name='action' value='REMOVE LAST HISTORY'>";
+}
+#inserthistory:
+function inserthistory($item, $price)
+{global $Login, $Password;
+
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	$q="INSERT INTO pricehistory VALUES (null, '$item','$price')";
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";	
+	logprint("q=$q",1);
+	
+} #inserthistory
+
+#showhistory:
+function showhistory()
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	$q="SELECT * FROM pricehistory WHERE 1";	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+	$report= "<table>";
+	while($row=mysql_fetch_array($result))
+							
+	{	
+			$value0=$row[0];
+			$value1=$row[1];
+			$value2=$row[2];
+							
+			$report.="<tr><td align='center'>$value0</td><td align='center'>$value1</td>".
+					"<td>$value2</td></tr>";
+	}
+	
+	$report.="</table>";
+	if (!$value0)
+		print "The history is empty!";
+		
+	print $report;
+} # showhistory
+
+#demolike:
+function demolike()
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	$q="SELECT * FROM pricehistory WHERE item LIKE 'Cha%'";	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+	$report= "<table>";
+	while($row=mysql_fetch_array($result))
+							
+	{	
+			$value0=$row[0];
+			$value1=$row[1];
+			$value2=$row[2];
+							
+			$report.="<tr><td align='center'>$value0</td><td align='center'>$value1</td>".
+					"<td>$value2</td></tr>";
+	}
+	
+	$report.="</table>";
+	if (!$value0)
+		print "The history is empty!";
+		
+	print $report;
+} # showhistory
+
+#showcount: How many items cost between $lowprice and $highprice?
+function showcount($lowprice, $highprice)
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	
+	$q="SELECT count(*) FROM pricehistory WHERE price>=$lowprice AND price<=$highprice";	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+	$row=mysql_fetch_array($result);
+	$count=$row[0];
+	
+	print "<p>There are $count items with prices between $$lowprice and $$highprice.</p><p>";
+
+} # showcount
+
+#showcount: How many items cost between $lowprice and $highprice?
+function countdistinctprices()
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	
+	$q="SELECT count(DISTINCT price) FROM pricehistory";	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+	$row=mysql_fetch_array($result);
+	$count=$row[0];
+	
+	print "<p>There are $count distinct prices in the price table.</p><p>";
+
+} # showcount
+
+#showaverageprice:
+function showaverageprices()
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	$q="SELECT item, avg(price) from pricehistory GROUP BY item";	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+	$report="<table>";
+	while($row=mysql_fetch_array($result))
+							
+	{	
+			$value0=$row[0];
+			$value1=$row[1];
+							
+		$report.="<tr><td align='center'>$value0</td><td align='center'>$value1</td></tr>";	
+		
+		//$report.="<tr><td align='center'>$value0</td><td align='center'>".
+		//sprintf("%.2f",$value1)."</td></tr>";
+					
+	}
+	$report.="</table>";
+	print $report;
+}
+#clearhistory:
+function clearhistory()
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	$q="TRUNCATE TABLE pricehistory";	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+
+}
+
+
+# largest_itemnumber: Finds out what is the largest itemnumber in the database
+# version 2: Use what mySQL gives us - a function for the purpose!
+function largest_itemnumber()
+{global $Login, $Password;
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+		
+	// $q="SELECT max(itemnumber) FROM pricehistory";	
+	$q="SELECT MAX(itemnumber) FROM pricehistory";
+	
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+	$row=mysql_fetch_array($result);
+	
+	$maxitnum=$row[0];
+	
+	return $maxitnum;
+} # largest_itemnumber
+			
+#removelasthistory:
+function removelasthistory()
+{global $Login, $Password;
+
+	$maxitnum=largest_itemnumber(); // most recently added will have largest item number.
+	
+	$connection=mysql_connect('localhost',$Login,$Password) or print 'main connect failed';
+	mysql_select_db('gridhistory',$connection) or print "main select failed";
+	
+	$q="DELETE FROM pricehistory WHERE itemnumber=$maxitnum";
+	$result = mysql_query ($q, $connection) or print "query '$q' failed";
+	
+}
+
+############ MAIN PROGRAM
+/////// MAIN PROGRAM ///////
+	makeheader();
+	
+	print "<h2>DIG 3134 Project 3: Demonstration of Basic List Management - Version 3</h2>";
+	
+	$action=$_POST['action'];
+	
+	if ($action=='ENTER ITEM')
+	{
+		inserthistory($_POST['item'],$_POST['price']);
+	}
+	else if ($action=='SHOW HISTORY')
+	{
+		showhistory();	// Probe for a win.
+	}
+	else if ($action=='SHOW COUNT')
+	{
+		showcount(25.00,75.00);	// Report on this price range
+	}	
+	else if ($action=='COUNT DISTINCT PRICES')
+	{
+		countdistinctprices();	// Report on distinct prices
+	}
+	else if ($action=='SHOW AVERAGE PRICES')
+	{
+		showaverageprices();	// Report on distinct prices
+	}
+	else if ($action=='CLEAR HISTORY')
+	{
+		clearhistory();	// Probe for a win.
+	}
+	else if ($action=='DEMO LIKE')
+	{
+		demolike();	// Print all items like Cha%
+	}
+	else if ($action=='REMOVE LAST HISTORY')
+	{
+		removelasthistory();	// Probe for a win.
+	}
+
+	drawinputs();
+?>
+</form>
+</body>
+</html>

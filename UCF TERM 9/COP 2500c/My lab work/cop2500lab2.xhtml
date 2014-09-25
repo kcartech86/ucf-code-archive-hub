@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+		h1{
+		color:blue;
+		background-color:black;
+		font-size:20px;
+		padding:10px;
+		text-align:center;
+		}
+		h2{
+		color:black;
+		background-color:red;
+		font-size:20px;
+		padding:10px;
+		text-align:center;
+		}
+	</style>
+
+<script type="text/javascript">
+	//Variables can be declared and initialized in the same line
+	var far1 = 32;
+	var far2 = 78;
+	var far3 = 212;
+	var cent1 = (5*(far1 - 32)/9);
+	var cent2 = (5*(far2 - 32)/9);
+	var cent3 = (5*(far3 - 32)/9);
+	
+	var subtotal, taxrate, salestax, total;
+	taxrate = 0.06;
+	subtotal = 57.24;
+	salestax = subtotal * taxrate; 
+	salestax = Math.round(salestax * 100 ); 
+	salestax = salestax / 100; 
+	total = subtotal + salestax;
+	
+	//To get a degree symbol to show using javascript you can use the unescape method
+	var degree = unescape('%B0');
+		
+	window.onload = function(){
+		//Create a new element
+		var algo_ttl1 = document.createElement("h1");
+		//Create a new text node for that element
+		var fahr2cent = document.createTextNode("Fahrenheit to Centigrade Conversion ( Fahr2Cent() )");
+		//Insert new element with text node appended
+		var container = document.getElementById("container");
+		algo_ttl1.appendChild(fahr2cent);
+		container.appendChild(algo_ttl1);
+		
+		//Create and append new paragraphs
+/*p1*/	var p1 = document.createElement("p");
+		var p1_txt = document.createTextNode("If the temperature outside is "+far1+degree+" Fahrenheit, then it would also be "+cent1+degree+" Centigrade.");
+		p1.appendChild(p1_txt);
+		container.appendChild(p1);
+
+/*p2*/	var p2 = document.createElement("p");
+		var p2_txt = document.createTextNode("If the temperature outside is "+far2+degree+" Fahrenheit, then it would also be "+cent2+degree+" Centigrade.");
+		p2.appendChild(p2_txt);
+		container.appendChild(p2);
+/*p3*/	var p3 = document.createElement("p");
+		var p3_txt = document.createTextNode("If the temperature outside is "+far3+degree+" Fahrenheit, then it would also be "+cent3+degree+" Centigrade.");
+		p3.appendChild(p3_txt);
+		container.appendChild(p3);
+		//Second algorithm
+/*h2*/  var algo_ttl2 = document.createElement("h2");
+		var priceCalc = document.createTextNode("Price Including Tax ( PriceCalc() )");
+		algo_ttl2.appendChild(priceCalc);
+		container.appendChild(algo_ttl2);	
+/*p4*/  var p4 = document.createElement("p");
+		var p4_txt = document.createTextNode("If the subtotal of an item is $"+subtotal+", then with sales tax it will cost $"+total+".");
+		p4.appendChild(p4_txt);
+		container.appendChild(p4);		
+		
+	}
+
+</script>
+</head>
+
+<body>
+    <div id="container">
+    
+    </div>
+    <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+    </p>
+</body>
+</html>

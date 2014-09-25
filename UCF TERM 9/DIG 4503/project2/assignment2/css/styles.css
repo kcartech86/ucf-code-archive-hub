@@ -1,0 +1,129 @@
+﻿body{
+	font-family: 'Asap', sans-serif;
+    width: 960px;
+    margin: 0 auto;
+    background-color: #A4D3EE;
+}
+
+h1{
+	color: #42647F;
+	padding-top:20px;
+    text-align: center;
+    font-size: 3em;
+	margin:auto;
+}
+
+#html5pic{
+    position: absolute;
+    top: 20px;
+    right: 20px;    
+}
+
+#searchArea input{
+	text-align: center;
+	width: 420px;
+	font-size: 25px;
+	-moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    outline: none;
+} 
+
+#searchArea{
+	text-align: center;
+}
+
+#searchArea ul{
+	padding: 0;
+    margin: 0;
+} 
+
+#searchArea ul li{
+	list-style: none;
+    padding: 0;
+    margin: 20px 0;
+} 
+
+#searchArea ul li button{
+	background: #36648B;
+	color: #fff;
+	font-size: 16px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	width:300px;
+	padding: 10px 25px;
+	border: 4px solid #525c65;
+	cursor: pointer;
+}
+
+#searchArea ul li button:active{
+	border: 4px solid #fff;
+}
+
+#photoArea ul li{
+	list-style: none;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	float: left;
+	padding: 10px;
+	margin: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #f3f3f3;
+}
+
+#photoArea{
+	height:400px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid #36648b;
+	overflow: auto;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+#photoArea p{
+	font-weight:bold;
+	color:#36648b;
+	background-color:#b0e0e6;
+	text-align: center;
+	width:600px;
+	margin-left:180px;
+	margin-right:180px;
+	padding:20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 0px solid #b0e0e6;
+}
+
+#photoArea ul{
+	display: none;
+}
+
+#photoArea ul li:hover {
+	background: #36648b;
+	border: 2px solid #363636;
+	cursor: pointer;
+}
+         
+#fullPhoto{
+	display: none;
+}
+
+#fullPhoto ul{
+	margin: 0;
+	padding: 0;
+}
+
+#fullPhoto ul li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+}

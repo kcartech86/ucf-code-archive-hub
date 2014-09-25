@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Kyle Cartechine - Form Lab 1</title>
+
+<script type="text/javascript" src="../js/form_lab_1.js"></script>
+<style type="text/css"> 
+	@import url('css/reset.css');
+</style>
+<style type="text/css">
+	@import url('css/form_lab_01.css');
+</style>
+</head>
+
+<body>
+	<div id="container">
+        
+        <h1>Sign In<span> or <a href="#">Sign Up</a></span></h1>
+        <form method="post" name="loginform"> 
+        <fieldset>
+        	<div id="formtainer">              
+                <div>
+                    <label for="email">Email:</label>
+                    	<input id="email" type="text" name="email" />
+                        
+                </div>
+                <div>        
+                    <label for="password">Password:</label>
+                    	<input type="text" name="password" />
+  	                    <a href="#">Forgot your password?</a>
+
+                </div>
+                
+                <div class="logger">          
+                    <label for "logged">Keep me logged in on this computer.</label>
+                    	<input id="logged" name="logged" type="checkbox"  value="yes" />
+                    <input id="submit" type="submit" name="login" value="Log In" />
+                </div>
+        	</div>       
+        </fieldset>        
+        </form>
+    </div>
+
+
+
+</body>
+</html>

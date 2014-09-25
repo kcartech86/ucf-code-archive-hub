@@ -1,0 +1,118 @@
+instead of testing for a blank string (which I wouldn't recommend trying to do), run a loop to say that if it's found in the array say that foundithere = 1, if the strcmp funtion does not return 0 foundithere does not = 1 and you should just copy the string into a new line.
+
+found = 0;
+for (i=0; i < don_cnt; i++)
+{
+  if (strcmp (word, inventory[i]) == 0)
+  { 
+    found = 1;
+    j = i;
+  
+    if (don_cnt > 0)
+    don_cnt--;
+  } 
+} 
+
+if (found == 1)
+donations[j] += temp;
+
+else 
+ {
+  donations[j] = temp; 
+  strcpy(inventory [j], word); 
+ }
+
+------------------------------------------------------------------------------
+
+for (i = 0; i < donCounter; i++)
+{
+  if (strcmp(item, donItem[i]) == 0)
+    {
+     donQuant[i] += quant;
+    }
+  
+  else
+    {
+     strcpy(donItem[i], item);
+     donQuant[i] = quant;
+     donCounter++;
+    }
+} 
+
+I think your donItem[i] is causing the problem.
+
+You should be copying into the donCounter'ith position, instead of the i'th.
+
+So, (donItem[donCounter], item) would be my solution.
+
+------------------------------------------------------------------------------
+
+
+requests_amount[i-1] = requests_amount[i]
+
+
+------------------------------------------------------------------------------
+
+else if (choice == 4) {
+printf("Printing the Donations Table\n\n");
+
+
+for (i=-1; i<don_count; i++) { 
+printf("%s", &donation_type);
+printf(" ");
+printf("%d", &donation_amount);
+printf("\n\n");
+
+}
+
+don_count=don_count+1;
+
+printf("Printing the Requests Table\n\n");
+
+for (i=-1; i<req_count; i++) {
+printf("%s", &request_type);
+printf(" ");
+printf("%d", &request_amount);
+printf("\n\n");
+
+}
+req_count=req_count+1;
+
+}
+
+
+-----------------------------------------------------------------------------
+
+
+for(i=0;i<doncount;i++){ 
+if(strcmp(dontype[i],reqtype[0]) == 0)
+foundagain = i;
+}
+
+printf("foundagain: %d\n", foundagain);
+printf("reqcount : %d\n", reqcount);
+printf("dontype : %s\n", dontype[foundagain]);
+printf("donamount : %d\n", donamount[foundagain]); 
+printf("reqtype : %s\n", reqtype[0]);
+printf("reqamount : %d\n", reqamount[0]);
+
+
+
+if(reqamount[0]<donamount[foundagain]){
+donamount[foundagain]=donamount[foundagain]-reqamount[0]; 
+for(i=0;i<reqcount;i++);{
+printf("reqamount : %d\n", reqamount[0]);
+reqamount[reqcount-(reqcount-i)]=reqamount[(reqcount+i)-reqcount];
+printf("reqamount : %d\n", reqamount[0]);
+} 
+reqcount--;
+printf("Request Fulfilled.\n\n"); 
+}
+That looks confusing. All I did for the option where the amount requested is less than the amount in the donation bank is just move the amounts up one. Something like: requestamount[i] = requestamount[i+1].
+
+
+----------------------------------------------------------------------------
+
+
+strcpy(don_inv_type[don_count], type);
+

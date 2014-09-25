@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>
+		Kyle Cartechine - Lab 9 - COP2500
+	</title>
+	
+</head>
+
+<body>
+	<script type="text/javascript">
+	//Part 1 ******************************************************
+	var josePhrase = "Jose lived in San Jose for many years.";
+	//document.write(josePhrase);
+	var lastJose = josePhrase.lastIndexOf("Jose");
+	//document.write("<br/>"+lastJose);
+	var findYears = josePhrase.lastIndexOf("years");
+	var findEar = josePhrase.substr(findYears+1, 3);
+	//document.write("<br/>"+findEar);	
+	//End Part 1 **************************************************
+	
+	//Part 2 ******************************************************	
+	String.prototype.countOccurrences = function countOccurrences(letter)
+	{
+		var count = 0;
+		//var letter = prompt("Enter letter to count: ", " ");		
+		for(i=0; i<this.length; i++)
+		{
+			if(this.charAt(i) == letter)
+			count++ ;
+		}
+		return count;
+	}
+	var letterNum = josePhrase.countOccurrences('e');
+	document.write("There are "+letterNum+" of the letter searched in the phrase.");	
+	//End Part 2 **************************************************
+	
+	//Part 3 ******************************************************
+	String.prototype.format = function format(color, typeface, fontsize, letterCase)
+	{	
+		var style1, style2, style3, style4;
+		
+		if (color != 0)
+			style1 = this.fontcolor(color);
+		
+		if(typeface == 'small')
+			style2 = style1.small();
+		if(typeface == 'big')
+			style2 = style1.big();
+		if(typeface == 'bold')
+			style2 = style1.bold();
+		if(typeface == 'italic')
+			style2 = style1.italics();
+		if(typeface == 'strike')
+			style2 = style1.strike();
+		if(typeface == 'fixed')
+			style2 = style1.fixed();
+			
+		style3 = style2.fontsize(fontsize);	
+			
+		if(letterCase == 'lowercase')
+			style4 = style3.toLowerCase();
+		else if(letterCase == 'uppercase')
+			style4 = style3.toUpperCase();
+		
+		return style4;
+		
+ 	}
+	//document.write("<br/>"+josePhrase);
+	var newFormat = josePhrase.format("Blue", "italic", "12", "uppercase");
+	document.write("<br/>"+newFormat);
+	//End Part 3 **************************************************
+	</script>
+
+</body>
+
+</html>

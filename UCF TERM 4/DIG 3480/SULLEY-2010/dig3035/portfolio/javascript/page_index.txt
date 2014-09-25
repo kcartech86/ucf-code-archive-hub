@@ -1,0 +1,100 @@
+/* Write a simple program that contains three parts. 
+1) Ask the user to input a String
+2) Convert the String to “Pig Language”
+3) Write the String to the console window.
+The program will repeat until the user indicates that they want to exit.*/	
+	
+	var userString = 0;
+	var pigLangIndex= 0;
+	
+//Everything must be contained in a loop because the Program Menu needs to continue to appear until the user enters "Exit"
+//Print menu and prompt for input
+	do{
+		var userChoice = prompt ("Please make make a selection.\n1 Enter a Word or Phrase\n2 Convert to Pig Language\n3 View Converted Word\nExit\n ", "Enter 1, 2, 3, or Exit");
+// Program 1 will keep asking for user to enter something until they do.		
+		if(userChoice == 1){
+			userString = prompt ("Please enter a word or short phrase: ");
+			while (userString == 0){
+				console.log("You need to enter something. ");
+				userString = prompt ("Please enter a word or short phrase: ");
+				
+			}
+		}
+/*Program 2 will convert string; there are three possibilities: there is no string 
+  stored, the string stored is a phrase, or the string stored is a single word  */		
+		if(userChoice == 2){
+//If a string has been entered, determine if string is a word or phrase by finding spaces			
+			if(userString != 0){
+				for (var i =0; i < userString.length; i++){
+     				if (userString[i] == " "){
+         				var space=0; space++;
+         				var words=0; words =space++;
+     				}
+				}
+// If string has spaces convert each substring using Pig Language specs				
+				if (space != 0){
+					
+					var j=0;  
+					var k=0; 
+					var splitWord; 
+					var splitUserString = new Array();
+					splitUserString = userString.split(" ");
+					var pigLang = new Array();
+					pigLangIndex=" ";
+	
+    				for (j; j<splitUserString.length; j++){
+         				splitWord = splitUserString[j] ;
+         				if (splitWord.length>=5){
+             				splitWord +="-a ";
+             				pigLang[j]=splitWord;
+		 				}
+         				else{
+             				splitWord +="-oink ";
+             				pigLang[j]=splitWord;
+		 				}
+						
+						while( k < pigLang.length ){
+        					pigLangIndex += pigLang[k];
+        					k++;
+						}
+					}
+					console.log("String converted");
+    			}
+// If string has no spaces it can be directly converted using Pig Language specs			
+				else {
+					if (userString.length>=5){
+             			userString +="-a ";
+             			pigLangIndex = userString;
+		 			}
+         			else{
+             			userString +="-oink ";
+             			pigLangIndex = userString;
+		 			}
+					console.log("String converted");
+				}                                        
+			}
+//If user hasn't entered a string they will be prompted to do so using firebug's console 			
+			else{
+				console.log("You need to first enter a string");
+			}
+		
+		}		
+		
+// Program 3 should output the converted string to firebug's console, unless string hasn't been entered	or converted	
+		if(userChoice == 3){ 
+			if (pigLangIndex == 0){
+				console.log("You need to first convert your string");
+			}
+			else{
+				console.log(pigLangIndex);
+			}
+			
+			
+		}
+//if Exit is entered at the main menu program exits and a final output is printed to firebug's console		
+	}while(userChoice != "Exit");
+	console.log("Thanks for using the Pig Language Converter!");
+
+
+
+                                                                                  

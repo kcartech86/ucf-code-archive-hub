@@ -1,0 +1,39 @@
+Site Content:
+
+Header:
+College of Education
+
+Menu:
+Home
+Dean's Welcome
+About the College
+Academics
+For Students
+For Faculty & Staff
+Alumni & Giving
+Research & Centers
+Societies, Organizations & Journals
+Partnerships
+Announcements
+UCF Teaching Academy
+Toni Jennings Exceptional Education Institute
+Morgridge International Reading Center
+
+Main Content:
+Featured Announcements
+
+ARE 5454/4453 Studio Experiences in Art Education
+The Art Education Program at the University of Central Florida and the Atlantic Center for the Arts are very pleased to announced that ARE 5454/4453 Studio Experiences in Art Education will be offered June 14-...
+
+UCF College of Education's Arts Integration Initiative Makes a Difference
+The UCF College of Education's Arts Integration Initiative provides Elementary Education majors the opportunity to integrate techniques from the arts into their lessons while making a difference for the pub...
+
+More News
+
+
+
+
+Fonts:
+font-family: Verdana, sans-serif;
+font-size: 10px /* up to 13px */
+font-weight: normal /* or bold */

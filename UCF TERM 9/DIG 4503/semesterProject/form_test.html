@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>Form Test</title>
+	
+	<style type="text/css">
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			font-weight: normal;
+			font-style: normal;
+			margin: 0 auto;
+		}
+
+		div#formDiv {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		div#formDiv h1 {
+			font-family: "Cutive", serif;
+			font-size: 400%;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		div#formDiv form {
+			width: 20em;
+			margin: 0 auto;
+		}
+		div#formDiv form fieldset {
+			border: 0;
+		}
+
+		div#formDiv form fieldset label {
+			float: left;
+			color: #888;
+			font-style: italic;
+			font-size: 1.05em;
+		}
+		div#formDiv form fieldset input[type=text] {
+			width: 98%;
+			float: left;
+			font-size: 1.5em;
+		}
+		div#formDiv form fieldset input[type=submit] {
+			clear: left;
+			width: 100%;
+			padding: 5px;
+			font-size: 2em;
+		}
+
+		div#responseDiv {
+			margin: 0 auto;
+			width: 40em;
+		}
+
+		div#responseDiv ul {
+			text-align: center;
+		}
+
+		div#responseDiv ul li {
+			list-style-type:none;
+			float: left;
+			padding: 5px 5px 0 5px;
+			border: 1px solid #444;
+			box-shadow: 1px 1px 4px #000;
+			margin: 10px 10px 0 0;
+		}
+
+		div#responseDiv ul li img {
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+    
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('form').bind('submit',function(e) {
+				e.preventDefault();
+				$.ajax({
+					data: 'searchTerm=' + $('input#searchTerm').val(),
+					dataType: 'html',
+					type: 'post',
+					url: 'wikimedia.php',
+					success: function(responseData) {
+						$('#wikiDiv').html(responseData);
+					}
+				});
+			});
+		});
+	</script>
+    <!--
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('form').bind('submit',function(e) {
+				e.preventDefault();
+				$.ajax({
+					data: 'searchTerm=' + $('input#searchTerm').val(),
+					dataType: 'html',
+					type: 'post',
+					url: 'getbooks.php',
+					success: function(responseData) {
+						$('#booklistDiv').html(responseData);
+					}
+				});
+			});
+		});
+	</script>
+    -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+		$('form').bind('submit',function(e) {
+			e.preventDefault();
+			$.ajax({
+				   method: 'get',
+				   dataType: 'json',
+				   url: 'getbooks.php',
+				   success: function(data) {
+						$('#bookDiv').append($(' '));
+				   },
+					error: function(data) {
+					console.log('error');
+					}
+				});
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	<div id="formDiv">
+		<form method="post" action="">
+			<fieldset>
+				<label for="searchTerm">Enter a term you would like to begin researching using Google Books and Wikipedia.</label>
+				<input type="text" name="searchTerm" id="searchTerm" value="">
+				<input type="submit" name="submit" id="submit" value="Search">		
+			</fieldset>
+		</form>
+	</div>
+	
+	<div id="wikiDiv">
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div id="booksDiv">
+    </div>
+
+</body>
+<html>

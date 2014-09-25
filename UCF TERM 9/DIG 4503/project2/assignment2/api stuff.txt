@@ -1,0 +1,11 @@
+Done! Here's the API key and secret for your new app:
+
+	DIG4503 Assignment 2
+Key:
+9fd3048fb246ba09b1d2766663b5f370
+
+Secret:
+fe3d52f7299de0bc
+
+
+

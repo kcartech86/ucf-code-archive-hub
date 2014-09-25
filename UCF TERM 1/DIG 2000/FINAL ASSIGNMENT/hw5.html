@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- Kyle Cartechine
+     Dig 2000 (Tue. /Thu.)
+     Homework Assignment #5
+     Portfolio Web Page
+     Due: 12-9-08      -->
+
+   <head>
+      <script type="text/javascript">
+	  <!--Image rollovers were done with Dreamweaver 8, Inkscape, and Corel Paint Shop Pro Photo X2 //-->
+	  <!--The javascript clock was done with help from w3 schools tutorials  (www.w3schools.com) //-->
+<!--
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	  
+      <title>DIG 2000 - Portfolio Webpage - Kyle Cartechine</title>
+         <style type="text/css">
+
+	    body { background-color:#000000;
+		       background-image:url(background.png); }
+			   
+	    h6  {  background-color:#000000;
+		    color:#ffffff;
+		    text-align: center;
+                  font-family: calibri, sans-serif, arial; }
+	    
+	     h1  { background-color:#0099FF;
+		      color:#333333;
+		      font-family: Verdana, Arial, sans-serif;
+			  text-align:center; }
+
+       .class1 { color:#ffffff;
+		            background-color:#0099FF;
+					font-size:16px;
+		            text-align:center;
+		            font-family: sans-serif, verdana, arial; }
+
+	.class2 { color:#ffffff;
+		            background-color:#000000;
+		            font-size:12px;
+					font:Georgia, Times, serif;
+					text-align:center; }
+
+	    div       { color:#FFFFFF;
+		            background-color:#000000;
+		            font: verdana;
+		            font-size:10px;  }
+
+            
+        
+         </style>
+
+   </head>
+
+<body onLoad="MM_preloadImages('menutop2.png','menuleft2.png','menuright2.png'), startTime()">
+<h1>Portfolio Webpage</h1>
+
+<table align="center" >
+  <tr>
+    <td  align="center" width="400" valign="top"><div id="txt" ></div>
+      <p class="class2">  Check out the blue design for more! >>></p>
+      <p class="class1">ASSIGNMENT 1 </p>
+      <p class="class2">This was the only assignment I had a partner to work with. 
+        We created a simple webpage with some content (video, picture, flash anim) at the center. 
+        Some basic HTML and CSS was used to make the page.</p>
+      <p class="class1">ASSIGNMENT 2 </p>
+      <p class="class2">My favorite assignment; we had to create a webcomic 
+        (with no more than four frames) using vector graphics. 
+        The comic was then posted on a webpage that again used HTML and CSS. 
+        This is where my partner disappeared on me!
+        If you can't already tell I like playing with vector graphics...</p>
+      <p class="class1">ASSIGNMNET 3 </p>
+      <p class="class2">This assignment involved RSS and Audio files. 
+        We had to record our own audio and using RSS create a podcast 
+        that allowed widespread access to the audio files. This assignment 
+        was the most interesting because I've never done a podcast or used RSS.
+    I found it was relatively easy to use RSS...</p>      <p>&nbsp;</p></td>
+    <td width="611" rowspan="6" align="center" valign="top"><a href="http://sulley.dm.ucf.edu/~ky775779/hw2.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Top Roll','','menutop2.png',1)"><img src="menutop.png" alt="ASSIGNMENT 1" name="Top Roll" width="561" height="296" border="0" align="top"></a><a href="http://sulley.dm.ucf.edu/~ky775779/hw3.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Left roll','','menuleft2.png',1)"><img src="menuleft.png" alt="ASSIGNMENT 2" name="Left roll" width="294" height="251" border="0"></a><a href="http://sulley.dm.ucf.edu/~ky775779/hw4rssfeed.xml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Right roll','','menuright2.png',1)"><img src="menuright.png" alt="ASSIGNMENT 3" name="Right roll" width="297" height="251" border="0"></a></td>
+  </tr>
+    
+</table>
+<h6>WEB PAGE BY: KYLE CARTECHINE</h6>
+<p class="class1">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-html401-blue"
+        alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+  </p>
+
+</body>
+
+</html>

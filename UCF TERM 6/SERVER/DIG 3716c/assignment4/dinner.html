@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Assignment 4 - Kyle Cartechine</title>
+
+<!--   *********Validation*********
+- All text fields should be validated on submit and the form should not be replaced
+until all data is valid
+- First name – check if something has been entered
+- Last name – check if something has been entered
+- Email – check if the entered text contains a @
+- Credit card number – check for these patterns
+o American Express – starts with 34 or 37, contains 15 digits
+o Mastercard – starts with 51, 52, 53, 54, or 55, contains 16 digits
+o Visa – starts with 4, contains 16 digits
+- Credit card expiration date
+o MM/YY, for example 05/22, 11/02
+- If a text field is determined to be invalid, the space to the right of the field should
+show an iconic representation of the error
+
+-->
+
+<style type="text/css">
+@import url('css/reset.css');
+@import url('css/styles.css');
+</style>
+<script type="text/javascript" src="js/a4.js"></script>
+
+
+</head>
+
+<body>
+	<div id="container">
+    
+    	<div id="header">
+        	<img src="img/papas_pizza.jpg" width="800" height="100" alt="Papa's Pizza" />
+        </div>
+        
+        <div id="imgWindow">
+        	<img src="img/combo0.jpg" id="startimg" width="400" height="550" alt="The Perfect Combo" />
+        </div>
+        
+    	<div id="entryform">
+        	<form action="process.php" method="post" name="orderForm">
+                
+                <fieldset>    
+                    <legend>Please Place Your Order</legend>
+                    <!--<div id="dropDown">
+                        <label for="crust">Big-Slice-Pizza&reg;:</label>
+                            <select id="crust" name="crust" />
+                                <option value="cheese">Ultimate Cheese</option>
+                                <option value="pepperoni">Pepe's Pepperoni</option>
+                                <option value="meat">Massive Meat</option>
+                                <option value="veggie">Very Veggie</option>
+                            </select>
+                            <span />                            	
+                        </div>
+                    -->
+                        <h3>Make Your Combo:</h3>
+                       
+                            <input id="pep_pizza" type="checkbox" name="pep_pizza" value="pizza" />
+                            <label for="pep_pizza">Pepperoni Pizza</label><br />
+                            <input id="knots" type="checkbox" name="knots" value="garlic_knots" />
+                            <label for="knots">Garlic Knots</label><br />
+                      <!--  <input id="breadsticks" type="checkbox" name="item" value="breadsticks" />
+                            <label for="breadsticks">Golden Breadsticks</label><br  />  -->
+                            <input id="coke" type="checkbox" name="coke" value="coca_cola"/>
+                            <label for="coke">Coca Cola</label>
+                            
+                        
+                    <!--<h3>Two Liter Refreshments:</h3>
+                        	                            
+                            <input id="coke" type="checkbox" name="soda" value="coke" />
+                            <label for="coke">Coca Cola</label><br />
+                            <input id="mtndew" type="checkbox" name="soda" value="mtndew" />
+                            <label for="mtndew">Mountain Dew</label><br />
+                            <input id="punch" type="checkbox" name="soda" value="punch" />
+                            <label for="punch">Hawaiian Punch</label>
+                            <br  />
+                            <span />
+                    -->
+                        
+                </fieldset>
+                
+                <fieldset>
+                	<legend>Please Enter Your Personal Info</legend>
+                    <div id="firstq">
+                       <label for="firstName">First Name:</label>
+                       <input id="firstName" type="text" name="firstName_name" value="" /><span id="err01" class="error">Error!</span>
+                         
+                    </div>
+                    <div id="secondq">
+                       <label for="lastName">Last Name:</label>    
+                       <input id="lastName" type="text" name="lastName_name" value="" /><span id="err02" class="error">Error!</span>
+                    </div>
+                    <div id="thirdq">
+                       <label for="email">Email:</label>
+                       <input id="email" type="text" name="email_name" value="" /><span id="err03" class="error">Error!</span>
+                    </div>
+                    <div id="fourthq">
+						<label for="cardType">Credit Card:</label> 
+						<select name="cards" id="cardType">
+							<option value="amExp">American Express</option>
+							<option value="master">MasterCard</option>
+							<option value="visa">Visa</option>
+						</select>
+					</div>
+                    <div id="fifthq">
+                       <label for="cardNumber">Credit Card Number:</label>    
+                       <input id="cardNumber" type="text" name="cardNumber" value="" /><span id="err04" class="error">Error!</span>
+                    </div>
+                    <div id="sixthq">
+                       <label for="cardExp">Credit Card Exp. :</label>    
+                       <input id="cardExp" type="text" name="cardExp" value="" /><span id="err05" class="error">Error!</span>
+                    </div>
+                    <div id="button">
+                 		<input id="submit" type="submit" name="submit" value="Create Pizza Pie" />
+                 	</div>
+
+                    
+                </fieldset>
+        	</form>
+            
+            
+        
+        </div>
+        
+       
+        
+    	<div id="footer">
+        <h3>Created by Kyle Cartechine for DIG3716c in Spring 2011</h3>
+        </div>
+    
+    </div>    
+
+</body>
+</html>

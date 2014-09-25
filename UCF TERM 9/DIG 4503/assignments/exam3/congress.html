@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+	<title>DIG4503 - Kyle Cartechine - Semester Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<style type="text/css">
+		div#repsResult{
+			text-align:center;
+		}
+		
+		h1{
+			font-size:1.75em;
+			margin:10px 5px;
+			padding:10px;
+		}
+		
+		a{
+			color:#ffffff;
+			background-color:#2c5197 ;
+			text-decoration:none;
+			padding:5px;
+			border:2px solid #000000;
+			border-radius:25px;
+		}
+		
+		div#formDiv {
+		text-align: center;
+		margin-bottom: 20px;
+		}
+
+		div#formDiv form {
+			width: 800px;
+			margin: 0 auto;
+		}
+		div#formDiv form fieldset {
+			border: 0;
+		}
+
+		div#formDiv form fieldset label {
+			text-align:center;
+			float: left;
+			color: #039;
+			font-size: 2.5em;
+		}
+		
+		div#formDiv form fieldset input[type=text] {
+			text-align:center;
+			float:left;
+			width: 800px;
+			margin-left:auto;
+			margin-right:auto;
+			font-size: 1.5em;
+		}
+		
+		div#formDiv form fieldset input[type=submit] {
+			clear: left;
+			text-align:center;
+			width: 55%;
+			padding: 2px;
+			font-size: 1.5em;
+		}
+	</style>
+		
+   	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/e3.js"></script>
+</head>
+
+<body>
+	<div id="formDiv">
+		<form method="post" action="">
+			<fieldset>
+				<label for="searchTerm">Enter a zipcode and find out who your representatives are.</label>
+				<input type="text" name="searchTerm" id="searchTerm" value="">
+				<input type="submit" name="submit" id="submit" value="Search">		
+			</fieldset>
+		</form>
+    </div>
+	
+	<div id="repsResult">
+	
+	</div>
+</body>
+
+</html>

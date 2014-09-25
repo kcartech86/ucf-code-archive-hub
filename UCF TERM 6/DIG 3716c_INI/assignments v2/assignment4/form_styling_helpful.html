@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Form Styling Method 4 - DIV with creative CSS</title>
+		  <style type="text/css">
+				fieldset div {
+					margin: 0 0 10px 160px;
+					/*
+					 	top right bottom left 
+						
+						same as:
+						margin-top: 0;
+						margin-right: 0;
+						margin-bottom: 10px;
+						margin-left: 160px;	
+					*/
+				}
+				fieldset div label {
+					line-height: 18px;
+					margin: 5px 20px 0 -160px;
+					width: 140px;
+					float: left;
+				}
+				fieldset div input {
+					display: block;
+					line-height: 16px;
+				}
+		  </style>
+    </head>
+    
+    <body>
+        <form action="process.php" method="post" name="formName">
+
+            <fieldset>
+                <legend>Entering User Info</legend>
+                <div>
+                   <label for="firstName">First Name:</label>
+              	    <input id="firstName" type="text" name="firstName" value="" />
+                </div>
+                <div>
+                   <label for="lastName">Last Name:</label>
+
+                   <input id="lastName" type="text" name="lastName" value="" />
+                </div>
+                <div>
+                   <input id="submit" type="submit" name="submit" value="Click to Submit" />
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

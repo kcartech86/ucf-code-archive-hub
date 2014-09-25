@@ -1,0 +1,284 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:808px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#container{
+	width:800px;
+	height:1020px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#ffefb3;
+	border:4px solid #000;
+}
+
+#ad_deck{
+	width:808px;
+	height:120px;
+	background-color:#CCC;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+#header img{
+	float:left;
+}
+
+h4{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
+	padding-left:10px;
+}
+
+h3{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fabf1a;
+	padding-left:10px;
+}
+
+#header h2{
+	height:20px;
+	background-color:#fabf1a;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	text-align:left;
+	padding-left:220px;
+	color:#000;
+}
+#header h1{
+	height:33px;
+	font-size:23px;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:left;
+	padding-left:216px;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+}
+
+#navbar ul {
+	margin-top:4px;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 0;
+	width: 600px;
+	height: 50px;
+	list-style-type: none;
+}
+
+#navbar ul li {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+#navbar ul li a {
+	display: block;
+	float: left;
+	padding: 0;
+	padding-top: 15px;
+	margin: 0;
+	width: 150px;
+	height: 45px;
+	background: url(../img/nav_default.jpg) no-repeat left top;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:12px;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+}
+
+#navbar ul li:last-child a {
+	width: 150px;
+}
+
+#navbar ul li a:hover {
+	background: url(../img/nav_roller.jpg) no-repeat left top;
+	color: #FFF;
+}
+
+#research ul .research a,
+#history ul .history a,
+#patents ul .patents a,
+#data_tables ul .data_tables a {
+	background: url(../img/nav_static.jpg) no-repeat left top;
+	color: #fff;
+	cursor: default;
+}
+
+#main{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding:10px;
+	margin:5px;
+	position:relative;
+}
+
+#main p{
+	font-family:Tahoma, Geneva, sans-serif;
+	padding:5px;
+	float:left;
+}
+
+#main img.labguy{
+	float:right;
+	padding-left:15px;
+}
+
+#main img.soileau{
+	float:left;
+	padding:15px;
+	padding-top:0px;
+	margin:0px;
+}
+
+p.large_title{
+	font-size:18px;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:left;
+	vertical-align:middle;
+	
+}	
+
+#footer{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:10px;
+	text-align:center;
+}
+
+#footer ul {
+	margin-left:auto;
+	margin-right:auto;
+	padding: 0;
+	width: 520px;
+	height: 20px;
+	list-style-type: none;
+}
+
+#footer ul li {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+#footer ul li a {
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 130px;
+	height: 15px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:10px;
+	text-align: center;
+	text-decoration: underline;
+	color: #000;
+}
+
+#footer ul li a:hover {
+	background-color:#000;
+	color: #FFF;
+}
+
+#research ul .research2 a,
+#history ul .history2 a,
+#patents ul .patents2 a,
+#data_tables ul .data_tables2 a {
+	background-color:#fabf1a;
+	color: #fff;
+	cursor: default;
+}
+
+#footer.history3{
+	width:520px;
+	position:relative;
+	top:152px;
+}
+
+#footer.patents3{
+	width:520px;
+	position:relative;
+	top:465px;
+}
+
+#leftpane{
+	width:170px;
+	height:380px;
+	float:left;
+}
+
+#rightpane{
+	width:170px;
+	padding-left:15px;
+	height:380px;
+	float:right;
+}
+
+#main.mainhist{
+	float:left;
+}
+
+#leftpane img.side1, #rightpane img.side2{
+	padding-top:25px;
+}
+
+p.info{
+	line-height:18px;
+}
+
+#main.patentcontent{
+	width:800px;
+	
+}
+
+#pat01{
+	float:left;
+}
+
+#patentinfo{
+	width:420px;
+	line-height:24px;
+	padding-top:20px;
+	float:left;
+}
+
+#patentinfo p{
+	padding:0px 15px 0px;
+}
+
+#patentinfo h3{
+	text-align:center;
+}
+
+#pat02{
+	float:left;
+}
+
+#main.dataimgs img{
+	float: left;
+	padding:5px;
+}
+
+#footer.data3{
+	width:520px;
+	position:relative;
+	top:216px;
+}
+
+
+
+
+
+	
+
+	

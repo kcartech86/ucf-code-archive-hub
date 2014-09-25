@@ -1,0 +1,48 @@
+<?php
+ session_start();
+ ?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DIG3134 - Random (Session Demonstration)</title>
+</head>
+
+<body>
+<?php
+
+
+	
+	#makenumber:creates a random number between 1 and 100
+	function makenumber()
+	{
+		return rand(1,100);
+	}
+	
+	###### MAIN PROGRAM BEGINS HERE #######
+	
+	print "<form method='post'>";
+	
+	$nextaction=$_POST['nextaction'];
+	
+	if(!$nextaction) // If there is no 'nextaction'. then this is our first call to the program.
+	{
+		$target=makenumber();
+		print "My random number is $target";
+	}
+	else if ($nextaction=="Next")
+	{
+		$target=$_SESSION['target'];
+		print "My random number is still $target!";
+
+	}
+	
+	$_SESSION['target']=$target; // so it'll be there when we need it later
+	
+	print "<input type='submit' name='nextaction' value='Next'>";
+
+	print "</form>";
+	
+?>
+</body>
+</html>

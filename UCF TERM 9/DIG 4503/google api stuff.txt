@@ -1,0 +1,20 @@
+Client ID for web applications
+Client ID:	
+841892016318.apps.googleusercontent.com
+Email address:	
+841892016318@developer.gserviceaccount.com
+Client secret:	
+nW8UYJnPmZ7RlsV4MSPs1Z-O
+Redirect URIs:	http://sulley.dm.ucf.edu/~ky775779/dig4503/semesterProject/
+JavaScript origins:	http://sulley.dm.ucf.edu
+
+
+Simple API Access
+Use API keys to identify your project when you do not need to access user data. Learn more
+Key for browser apps (with referers)
+API key:	
+AIzaSyA4UTieFf2SPD1MWCCF1Lkls4cUJc8Cgz4
+Referers:	
+Any referer allowed
+Activated on:	Apr 19, 2012 10:00 AM
+Activated by:	 kcartech86@gmail.com – you

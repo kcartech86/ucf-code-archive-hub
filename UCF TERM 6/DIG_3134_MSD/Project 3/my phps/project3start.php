@@ -1,0 +1,141 @@
+<?php
+	session_start();
+	
+// STARTER KIT for Wall War - DIG 3134 - Spring 2011 - Moshell
+
+$Gridsize=7;
+$Cellwidth=480/$Gridsize;
+
+define('BLACK','#000000');
+define('GOLD','#AAAA33');
+define('BLUE','#0000FF');
+define('WHITE','#FFFFFF');
+
+function makeheader()
+{ global $Cellwidth;
+
+	print '
+	  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Wall War - Starter Kit</title>';
+
+
+print "	<style type='text/css'>
+			.mtable td 
+			{
+				width:$Cellwidth"."px; height:$Cellwidth"."px;
+				color:WHITE
+			}
+		</style>";
+
+print '</head>
+<body><form method="post">
+';
+} # makeheader
+
+function preparegrid()
+{global $Grid, $Gridsize;
+
+	for ($y=0; $y<=$Gridsize+1; $y++)
+	{
+		for ($x=0; $x<=$Gridsize+1; $x++)
+		{
+			if ($x==0) // left margin
+			{
+				if ($y==($Gridsize+1)/2)
+					$Grid[$x][$y]=BLACK;
+				else
+					$Grid[$x][$y]=BLUE;
+			}
+			else if ($y==0) // top margin
+			{
+				if ($x==($Gridsize+1)/2)
+					$Grid[$x][$y]=GOLD;
+				else
+					$Grid[$x][$y]=BLUE;
+			}
+			else if (($x==$Gridsize+1)||($y==$Gridsize+1))
+			{	// right margin and bottom margin
+				$Grid[$x][$y]=BLUE;
+			}
+			else	// fill the dude with white!
+				$Grid[$x][$y]=WHITE;
+				
+		} # x loop
+	} # y loop
+} # preparegrid
+
+function drawgrid()
+{global $Grid,$Gridsize;
+
+	$result='<table class="mtable" border=1>';
+	for ($y=0; $y<=$Gridsize+1; $y++)
+	{
+		$result.="<tr>";
+		for ($x=0; $x<=$Gridsize+1; $x++)
+		{
+			if ($x==0) $char=$y;
+			else if ($y==0) $char=chr($x+64);
+			else $char="&nbsp;";
+			
+			$color=$Grid[$x][$y];
+			$result.="<td align='center' style='background-color:$color'>$char</td>";
+		} # x loop
+		$result.="</tr>";
+	} # y loop
+	$result.="</table>";
+	print $result;
+} #drawgrid
+
+function drawinputs()
+{
+	print "<p>X position(letter):<input type='text' size=2 name='xinput'><br />
+		Y position(number):<input type='text' size=2 name='yinput'><br />
+		Color:<input type='text' size=2 name='colorinput' <br />
+		<input type='submit' name='action' value='CLEAR'>
+		<input type='submit' name='action' value='GO'>";
+	
+}
+
+function xinputConvert()
+{global $x;
+	$a = $x;
+	$x = ord($a)-64;
+	if ($x>8)
+	$x = $x-32;
+	return $x;
+}	
+
+/////// MAIN PROGRAM ///////
+	makeheader();
+	$action=$_POST['action'];
+	
+	if ((!$action)||($action=='CLEAR'))
+		preparegrid();
+	else // we must be playing already. So fetch and modify the Grid.
+	{
+		$Grid=$_SESSION['Grid'];
+		$x=$_POST['xinput'];
+		$x=xinputConvert();
+		$y=$_POST['yinput'];
+		$c=$_POST['colorinput'];
+		if ($c=='g')
+			$color=GOLD;
+		else if ($c=='b')
+			$color=BLACK;
+		else
+			$color=WHITE;
+		$Grid[$x][$y]=$color;
+	} # 
+	
+	drawgrid();
+	drawinputs();
+	
+	$_SESSION['Grid']=$Grid; // Store the grid for the next cycle
+	
+?>
+</form>
+</body>
+</html>

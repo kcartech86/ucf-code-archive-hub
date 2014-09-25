@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Image Gallery</title>
+        <script type="text/javascript">
+			function showPic(whichpic) {
+				var source = whichpic.getAttribute('href');
+				var placeholder = document.getElementById('image_placeholder');
+				placeholder.setAttribute('src',source);
+			}
+			function newImage() {
+				
+			}
+			function newCaption() {
+				
+			}
+			window.onload = newImage;
+        </script>
+    </head>
+    <body>
+    	<div id="container">
+        	<ul style="list-style-type: none; margin:0; padding:0;">
+            	<li>
+                	<a href="images/flying-car-593.jpg"
+                       onclick="showPic(this); return false;" 
+                       title="picture 1">
+                          Picture 1
+                    </a>
+                </li>
+            	<li>
+                	<a href="images/flying-car-m400.jpg"
+                       onclick="showPic(this); return false;"
+                       title="picture 2">
+                          Picture 2
+                    </a>
+                </li>
+            	<li>
+                	<a href="images/log200711a.jpg" 
+                       onclick="showPic(this); return false;"
+                       title="picture 3">
+                          Picture 3
+                    </a>
+                </li>
+            	<li>
+                	<a href="images/saucercarSplash_450x325.jpg"
+                       onclick="showPic(this); return false;"
+                       title="picture 4">
+                          Picture 4
+                    </a>
+                </li>
+            </ul>
+            <div id="image_placeholder_div">
+				<img id="image_placeholder" src="" alt="gallery placeholder" />
+			</div>
+			<div id="new_image_placeholder_div" />
+       	</div>
+    </body>
+</html>

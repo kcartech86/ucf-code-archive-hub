@@ -1,0 +1,12 @@
+<modification>
+	<id>No Common Home</id>
+	<version>1.5.x</version>
+	<vqmver>1.0.8</vqmver>
+	<author>Jay Gilford - jay@jaygilford.com</author>
+	<file name="catalog/controller/common/seo_url.php">
+		<operation>
+			<search position="replace"><![CDATA[if ($url) {]]></search>
+			<add><![CDATA[if ($url || (isset($data['route']) && $data['route'] == 'common/home') ) {]]></add>
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>SHOW RANDOM IMAGE FROM ARRAY</title>
+        <script type="text/javascript">
+			function showRandom() {
+				var my_text = Array(3);
+				
+				my_text[0] = new Image(400, 712);
+				my_text[0].src = "img/Zune_Girl 01.jpg";
+				my_text[1] = new Image(400, 712);
+				my_text[1].src = "img/Zune_Girl 02.jpg";
+				my_text[2] = new Image(400, 712);
+				my_text[2].src = "img/Zune_Girl 03.jpg";
+				my_text[3] = new Image(400, 712);
+				my_text[3].src = "img/Zune_Girl 04.jpg";
+				
+				var display = document.getElementById("banner");
+				
+				if (display.firstChild != null) {
+					var text_node_to_remove = display.firstChild;
+					display.removeChild(text_node_to_remove);
+				}
+				
+				var random_number = Math.floor(4*Math.random());   // give me a random number 0-3
+				var new_text_node = document.createTextNode(my_text[random_number]);
+				display.appendChild(new_text_node);
+			}
+			
+			window.onload = showRandom;     /* notice that I didn't write showRandom();
+											   by leaving off the (), only referencing the function, not
+											   executing it.  If I execute it right here in the document <head>,
+											   p#random won't exist yet and I'll get an error. */
+		</script>
+    </head>
+
+    <body>
+     <h1 id="banner"></h1>
+       
+    </body>
+</html>
+
+
+

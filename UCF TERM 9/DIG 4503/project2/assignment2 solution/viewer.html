@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<title>Assignment 2 - Jon Friskics Solution - Basic XML parsing w/PHP</title>
+		<link href='http://fonts.googleapis.com/css?family=Cutive' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('form').bind('submit',function(e) {
+					e.preventDefault();
+					$.ajax({
+						data: 'searchTerm=' + $('input#searchTerm').val(),
+						dataType: 'html',
+						type: 'post',
+						url: 'getThumbs.php',
+						success: function(responseData) {
+							$('#responseDiv').html(responseData);
+							$('#responseDiv img').bind('click',function(e2) {
+								e2.preventDefault();
+								$.ajax({
+									data: 'photoId=' + $(this).attr('alt'),
+									dataType: 'html',
+									type: 'post',
+									url: 'getPhoto.php',
+									success: function(responseData2) {
+										$('#formDiv').fadeTo(400,.2);
+										$('#responseDiv').fadeTo(400,.2,function() {
+											$('body').append(responseData2);
+											if($('#bigPhoto img').width() < 300) {
+												var width = 300;
+											} else {
+												var width = $('#bigPhoto img').width();
+											}
+											var left = (($(window).width() - width) / 2) + 'px';
+											$('#bigPhoto').css({'width':width + 'px','top':'5px','left':left});
+											$('body').bind('click',function() {
+												$('#bigPhoto').remove();
+												$('#responseDiv,#formDiv').fadeTo('fast',1);
+											});
+										});
+									},
+									error: function(responseData2) {
+										console.log('the getPhoto.php ajax call failed');
+									}
+								});
+							});
+						},
+						error: function(responseData) {
+							console.log('the getThumbs.php ajax call failed');
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="formDiv">
+			<h1>A Case of the Mondays</h1>
+			<form method="post" action="">
+				<fieldset>
+					<label for="searchTerm">Enter a term to search for using the Flickr API</label>
+					<input tabindex="0" type="text" name="searchTerm" id="searchTerm" value="" />
+					<input tabindex="1" type="submit" name="submit" id="submit" value="Search" />
+				</fieldset>
+			</form>
+		</div>
+		<div id="responseDiv">
+		</div>
+	</body>
+</html>

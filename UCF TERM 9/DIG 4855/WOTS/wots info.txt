@@ -1,0 +1,67 @@
+WOTS LOGO 1
+https://docs.google.com/open?id=0By-rCjHfGtmtMzY4M2wzekRRRnFhankwQjhUVWI3Zw
+
+WOTS logo2
+https://docs.google.com/open?id=0By-rCjHfGtmtcXpVUVk1Q0dRVGluQlpaYWVDTFpJQQ
+
+WOTS PSD
+https://docs.google.com/open?id=0By-rCjHfGtmtVk9BWDJTVi1RdUdFX2w4MHF4ZmRHdw
+
+Baord PDF small
+https://docs.google.com/open?id=0By-rCjHfGtmta2FhWU9xaEdUZ2VSN3pVRk1NSmcxdw
+
+Baord PSD small
+https://docs.google.com/open?id=0By-rCjHfGtmtT1A2NURwME5UeEs5UmoyZGRvb1VDdw
+
+logo v3 png:
+https://docs.google.com/open?id=0By-rCjHfGtmtMTJqV3M3MEdTQ1d0ZXZ0QVMwdU1FZw
+
+logo v3 psd:
+https://docs.google.com/open?id=0By-rCjHfGtmtb2NVdkRUcWRUOGluX01DWS1sNmxQZw
+
+
+Board V2 original(42x48@300dpi) .psd:
+https://docs.google.com/open?id=0By-rCjHfGtmtZDZmeGQxQjdRcVNfakFKbzJoN2JZUQ
+
+
+Board V2 scaled(21x24@300dpi) .psd:
+https://docs.google.com/open?id=0By-rCjHfGtmtX0VlaE1XM2FROUttR3FhR1VaVC1wdw
+
+
+Board V2 scaled(21x24@300dpi) .pdf:
+https://docs.google.com/open?id=0By-rCjHfGtmtaDRSWUU2UTFTUENQVWVIeUh2Nzdmdw
+
+
+Our Title:
+Harnessing UCF's Kinetic Potential: Creating a Smarter Grid One Step At A Time
+
+
+Project Objective:
+
+The intention of this research is to discover alternative energy sources 
+(to help supplement campus energy consumption.) that help improve 
+efficiency of electrical usage on campus.  Our research is focused on 
+the kinetic power of a simple human footstep in combination with 
+piezoelectric technology, energy storage, and social media environments. 
+
+
+
+Our Abstract:
+
+As energy consumption increases, so too does the need for sustainable 
+energy sources. We believe that a human’s movement can be an excellent 
+source of energy that can be harvested seamlessly from a native environment.
+Utilizing piezoelectric technology, kinetic movement, and social media 
+integration, we are able to generate energy from a simple footstep. One 
+example of this technology is a piezoelectric surface, that when force is 
+applied to it, generates an electric charge that can be stored . This method
+ will be the most unobtrusive for gathering energy from human movement. Our 
+intention is to track and influence the collective energy output of the UCF 
+community using a social media component. Though one footstep may seem like 
+a small amount of energy produced, the best results are from a mass 
+contribution in a small community. So, what better place is there than UCF? 
+Imagine a smart grid system that collects the kinetic energy from footsteps 
+in high traffic areas across campus. Utilizing a social media component, users' 
+collective output data can be shared and compared individually. This research, 
+will in further detail, explore how it is possible to increase energy output 
+on a proposed smart grid system through social media participation.

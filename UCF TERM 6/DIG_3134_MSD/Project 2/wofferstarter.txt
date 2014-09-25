@@ -1,0 +1,162 @@
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// The first example: Using arrays to store letters and a visibility control
+
+<?php // woffer01.php
+	$letter=array ('X','P','E','R','F','E','C','T');
+	$visible=array(0,0,1,0,0,1,0,1); // again, 8 cells; ignore first one.
+
+// first let's make a function to draw the letters. (WITH bugs!)
+// then let's improve it, so as to draw only the VISIBLE letters.
+// we use our favorite html construct, the <table>
+
+	print '
+	<style type="text/css">
+	.mtable td {
+		width:50px;
+	}
+	</style>';
+
+	print "<table class='mtable' border=1><tr>";
+	for ($i=1; $i<=7; $i++)
+	{
+		//print "i=$i,visible=".$visible[$i]."<br />";
+	     if ($visible[$i])
+		 	print "<td>".$letter[$i]."</td>";
+		else
+			print "<td>&nbsp;</td>";
+	}
+	print "</tr></table>";
+?>
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// The second example: Adding spaces-marked-by-stars, and
+//	an input-guessing-capability.
+
+<?php // woffer02.php
+	session_start();
+
+// WHEEL OF FORTUNE (Project 2) Starter Kit, Phase 2
+// J. Michael Moshell - 9 February 2011
+
+	$testnumber=2;
+	
+	# A standard diagnostic tool
+	function logprint ($what,$num)
+	{global $testnumber;
+		if ($num==$testnumber)
+			print "LP:$what <br />";
+	}
+	
+	#makeheader:
+	function makeheader( )
+	{
+		print '
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Jeopardy Starter Kit</title>
+	
+		<style type="text/css">
+			.mtable td 
+			{
+				width:50px;
+			}
+		</style>
+	
+		</head>
+		
+		<body>
+		<h1>Moshell\'s Jeopardy Starter Kit</h1>
+		<form method="post">
+		';
+	} # makeheader
+	
+	#makefooter:
+	function makefooter ()
+	{
+		print "</form></body></html>";
+	}
+
+	#display: Draws the Jeopardy table
+	function display($visible, $letters)
+	{
+		$letterlength=count($letters);
+		print "<table class='mtable' border=1><tr>";
+		for ($i=1; $i<$letterlength; $i++)
+		{
+			logprint("i=$i,vi=".$visible[$i]." ltr=".$letters[$i],1);
+			
+			//print "i=$i,visible=".$visible[$i]."<br />";
+			if ($letters[$i]==' ')
+				print "<td><strong><center>*</center></strong></td>";
+			else if ($visible[$i])
+			 {
+				print "<td><center>".$letters[$i]."</center></td>";
+			 }
+			else
+				print "<td>&nbsp;</td>";
+		}
+		print "</tr></table>";
+	}
+	
+	#drawinputscreen: Asks for input.
+	function drawinputscreen($guesses)
+	{
+		print "<input type='text' name='guessletter'>";
+		print "Guess a letter. You have $guesses guesses left.";
+		print "<input type='submit' name='action' value='Go'>";
+	}
+	
+	######## MAIN PROGRAM ##########
+	
+	makeheader();
+
+	$text="A whole sentence of words";  // later, we will read this from
+										// a text file.
+	
+	for ($i=0; $i<=strlen($text);$i++)
+	{
+		$letters[$i+1]=strtoupper($text[$i]);	
+	}
+	
+	$letterlength=count($letters);
+
+	$visible=$_SESSION['visible'];
+	$guesses=$_SESSION['guesses'];
+	
+	$act=$_POST['action'];
+	if (!$act)
+	{
+		logprint("noact",1);
+		
+		for ($i=1; $i<=$letterlength; $i++)
+			$visible[$i]=0;
+			
+		$guesses=5;
+	} # initialization block
+	else 
+	{ // main repeated action. Get a guessletter, scan the array.
+		$guessletter=strtoupper($_POST['guessletter']); // a-> A, etc. uppecase
+		logprint("gp=$guessletter",1);
+		
+		for ($i=1; $i<=$letterlength; $i++)
+		{
+			$ll=$letters[$i];
+			if ($guessletter==$letters[$i])
+			{
+				logprint("setting visible $i",1);
+				$visible[$i]=1;
+			}
+		}
+		$guesses=$guesses-1;
+	} #repeated action block
+	
+	display($visible,$letters);
+	drawinputscreen($guesses);
+		
+	$_SESSION['visible']=$visible;
+	$_SESSION['guesses']=$guesses;
+?>

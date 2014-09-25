@@ -1,0 +1,204 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x10c635e0, pid=4680, tid=284
+#
+# JRE version: 6.0_18-b07
+# Java VM: Java HotSpot(TM) Client VM (16.0-b13 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x10c635e0
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0226e800):  JavaThread "Finalizer" daemon [_thread_in_native, id=284, stack(0x02100000,0x02150000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x10c635e0
+
+Registers:
+EAX=0x10c635e0, EBX=0x0c70bd90, ECX=0x0226e910, EDX=0x0c7715e0
+ESP=0x0214f82c, EBP=0x0214f860, ESI=0x0c70bd90, EDI=0x0226e800
+EIP=0x10c635e0, EFLAGS=0x00010283
+
+Top of Stack: (sp=0x0214f82c)
+0x0214f82c:   022e9f47 0226e910 0214f868 0035a6e0
+0x0214f83c:   00000000 0214f840 00000000 0214f874
+0x0214f84c:   0c7715e0 00000000 0c70bd90 00000000
+0x0214f85c:   0214f870 0214f898 022e2da1 0c70c1a0
+0x0214f86c:   022e8269 0035a6e0 00000000 0214f878
+0x0214f87c:   0c709f24 0214f8a0 0c7715e0 00000000
+0x0214f88c:   0c709f48 0214f870 0214f8a0 0214f8b4
+0x0214f89c:   022e02cb 06f87710 00001f80 022e0266 
+
+Instructions: (pc=0x10c635e0)
+0x10c635d0:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000005]
+
+Stack: [0x02100000,0x02150000],  sp=0x0214f82c,  free space=13e0214ececk
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x10c635e0
+j  com.sun.jna.Memory.finalize()V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf072c]
+V  [jvm.dll+0x17fd51]
+V  [jvm.dll+0xf07ad]
+V  [jvm.dll+0xfa09f]
+V  [jvm.dll+0xfcd94]
+C  [java.dll+0x2100]
+j  java.lang.ref.Finalizer.runFinalizer()V+45
+j  java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V+1
+j  java.lang.ref.Finalizer$FinalizerThread.run()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf072c]
+V  [jvm.dll+0x17fd51]
+V  [jvm.dll+0xf08f7]
+V  [jvm.dll+0xf096d]
+V  [jvm.dll+0x11a4c0]
+V  [jvm.dll+0x1dd924]
+V  [jvm.dll+0x17f9cc]
+C  [msvcr71.dll+0x9565]
+C  [kernel32.dll+0x4d0e9]
+C  [ntdll.dll+0x419bb]
+C  [ntdll.dll+0x4198e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.jna.Memory.free(J)V+0
+j  com.sun.jna.Memory.finalize()V+4
+v  ~StubRoutines::call_stub
+j  java.lang.ref.Finalizer.invokeFinalizeMethod(Ljava/lang/Object;)V+0
+j  java.lang.ref.Finalizer.runFinalizer()V+45
+j  java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V+1
+j  java.lang.ref.Finalizer$FinalizerThread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x11b90400 JavaThread "Thread-1" daemon [_thread_in_native, id=4704, stack(0x11310000,0x11360000)]
+  0x01589400 JavaThread "DestroyJavaVM" [_thread_blocked, id=3636, stack(0x00290000,0x002e0000)]
+  0x11a67c00 JavaThread "TimerQueue" daemon [_thread_blocked, id=3300, stack(0x122e0000,0x12330000)]
+  0x11a60400 JavaThread "Animation Thread" [_thread_blocked, id=4892, stack(0x113b0000,0x11400000)]
+  0x1061b800 JavaThread "Animation Thread" [_thread_blocked, id=5508, stack(0x11360000,0x113b0000)]
+  0x105dec00 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=4920, stack(0x112b0000,0x11300000)]
+  0x10466400 JavaThread "AWT-Shutdown" [_thread_blocked, id=4700, stack(0x10bc0000,0x10c10000)]
+  0x1042cc00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4720, stack(0x10af0000,0x10b40000)]
+  0x022b5c00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=4900, stack(0x10380000,0x103d0000)]
+  0x0229f400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=4456, stack(0x10330000,0x10380000)]
+  0x0229d800 JavaThread "Attach Listener" daemon [_thread_blocked, id=5408, stack(0x102e0000,0x10330000)]
+  0x0229a800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4184, stack(0x02150000,0x021a0000)]
+=>0x0226e800 JavaThread "Finalizer" daemon [_thread_in_native, id=284, stack(0x02100000,0x02150000)]
+  0x02269c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=4980, stack(0x01970000,0x019c0000)]
+
+Other Threads:
+  0x02267800 VMThread [stack: 0x01590000,0x015e0000] [id=1784]
+  0x022b7800 WatcherThread [stack: 0x103d0000,0x10420000] [id=4368]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 39296K, used 1600K [0x042e0000, 0x06d80000, 0x06d80000)
+  eden space 34944K,   4% used [0x042e0000, 0x04470318, 0x06500000)
+  from space 4352K,   0% used [0x06940000, 0x06940000, 0x06d80000)
+  to   space 4352K,   0% used [0x06500000, 0x06500000, 0x06940000)
+ tenured generation   total 87424K, used 7037K [0x06d80000, 0x0c2e0000, 0x0c2e0000)
+   the space 87424K,   8% used [0x06d80000, 0x0745f6f8, 0x0745f800, 0x0c2e0000)
+ compacting perm gen  total 14592K, used 14591K [0x0c2e0000, 0x0d120000, 0x102e0000)
+   the space 14592K,  99% used [0x0c2e0000, 0x0d11fc68, 0x0d11fe00, 0x0d120000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\javaw.exe
+0x775c0000 - 0x776e7000 	C:\Windows\system32\ntdll.dll
+0x76030000 - 0x7610c000 	C:\Windows\system32\kernel32.dll
+0x761e0000 - 0x762a6000 	C:\Windows\system32\ADVAPI32.dll
+0x77740000 - 0x77803000 	C:\Windows\system32\RPCRT4.dll
+0x75f40000 - 0x75fdd000 	C:\Windows\system32\USER32.dll
+0x76620000 - 0x7666b000 	C:\Windows\system32\GDI32.dll
+0x75fe0000 - 0x75ffe000 	C:\Windows\system32\IMM32.DLL
+0x76110000 - 0x761d8000 	C:\Windows\system32\MSCTF.dll
+0x762b0000 - 0x7635a000 	C:\Windows\system32\msvcrt.dll
+0x77700000 - 0x77709000 	C:\Windows\system32\LPK.DLL
+0x76670000 - 0x766ed000 	C:\Windows\system32\USP10.dll
+0x7c340000 - 0x7c396000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\msvcr71.dll
+0x6d8b0000 - 0x6db47000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\client\jvm.dll
+0x74850000 - 0x74882000 	C:\Windows\system32\WINMM.dll
+0x77470000 - 0x775b5000 	C:\Windows\system32\ole32.dll
+0x768d0000 - 0x7695d000 	C:\Windows\system32\OLEAUT32.dll
+0x74810000 - 0x7484d000 	C:\Windows\system32\OLEACC.dll
+0x75aa0000 - 0x75acc000 	C:\Windows\system32\apphelp.dll
+0x6d860000 - 0x6d86c000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\java.dll
+0x6d340000 - 0x6d348000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\hpi.dll
+0x75bd0000 - 0x75bd7000 	C:\Windows\system32\PSAPI.DLL
+0x6d8a0000 - 0x6d8af000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\zip.dll
+0x6d0b0000 - 0x6d1fa000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\awt.dll
+0x735e0000 - 0x73622000 	C:\Windows\system32\WINSPOOL.DRV
+0x749b0000 - 0x74b4e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.6002.18005_none_5cb72f96088b0de0\COMCTL32.dll
+0x76780000 - 0x767d9000 	C:\Windows\system32\SHLWAPI.dll
+0x727e0000 - 0x727ec000 	C:\Windows\system32\DWMAPI.DLL
+0x74bb0000 - 0x74bef000 	C:\Windows\system32\uxtheme.dll
+0x60c40000 - 0x60ca9000 	C:\PROGRAM FILES\NORTON INTERNET SECURITY\ENGINE\17.6.0.32\ASOEHOOK.DLL
+0x70900000 - 0x709a3000 	C:\PROGRAM FILES\NORTON INTERNET SECURITY\ENGINE\17.6.0.32\Microsoft.VC90.CRT\MSVCR90.dll
+0x70ac0000 - 0x70b4e000 	C:\PROGRAM FILES\NORTON INTERNET SECURITY\ENGINE\17.6.0.32\Microsoft.VC90.CRT\MSVCP90.dll
+0x01570000 - 0x0157f000 	C:\Program Files\Logitech\SetPoint\GameHook.dll
+0x019d0000 - 0x019de000 	C:\Program Files\Logitech\SetPoint\lgscroll.dll
+0x71850000 - 0x718eb000 	C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.4053_none_d08d7da0442a985d\MSVCR80.dll
+0x74f80000 - 0x74fa1000 	C:\Windows\system32\NTMARTA.DLL
+0x76360000 - 0x763a9000 	C:\Windows\system32\WLDAP32.dll
+0x77710000 - 0x7773d000 	C:\Windows\system32\WS2_32.dll
+0x776f0000 - 0x776f6000 	C:\Windows\system32\NSI.dll
+0x75730000 - 0x75741000 	C:\Windows\system32\SAMLIB.dll
+0x75020000 - 0x7505b000 	C:\Windows\system32\rsaenh.dll
+0x75b20000 - 0x75b3e000 	C:\Windows\system32\USERENV.dll
+0x75b00000 - 0x75b14000 	C:\Windows\system32\Secur32.dll
+0x6d6c0000 - 0x6d6d3000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\net.dll
+0x75260000 - 0x7529b000 	C:\Windows\system32\mswsock.dll
+0x75390000 - 0x75395000 	C:\Windows\System32\wship6.dll
+0x74230000 - 0x7423f000 	C:\Windows\system32\NLAapi.dll
+0x75500000 - 0x75519000 	C:\Windows\system32\IPHLPAPI.DLL
+0x754c0000 - 0x754f5000 	C:\Windows\system32\dhcpcsvc.DLL
+0x75750000 - 0x7577c000 	C:\Windows\system32\DNSAPI.dll
+0x754b0000 - 0x754b7000 	C:\Windows\system32\WINNSI.DLL
+0x75480000 - 0x754a2000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x713a0000 - 0x713af000 	C:\Windows\system32\napinsp.dll
+0x712c0000 - 0x712d2000 	C:\Windows\system32\pnrpnsp.dll
+0x712e0000 - 0x712e8000 	C:\Windows\System32\winrnr.dll
+0x74f50000 - 0x74f55000 	C:\Windows\System32\wshtcpip.dll
+0x72710000 - 0x72716000 	C:\Windows\system32\rasadhlp.dll
+0x76960000 - 0x77470000 	C:\Windows\system32\shell32.dll
+0x6d2e0000 - 0x6d334000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\fontmanager.dll
+0x6d6e0000 - 0x6d6e9000 	C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Xms128m -Xmx128m 
+java_command: processing.app.Base C:\Users\Kyle_J_C\Desktop\assignment2_gallery\assignment2_gallery.pde
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Users\Kyle_J_C\Desktop\UCF Spring 2010\DIG3480 Friskics\Processing\processing-1.1\java\bin
+USERNAME=Kyle_J_C
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Vista Build 6002 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 3658876k(1861740k free), swap 7507956k(5840488k free)
+
+vm_info: Java HotSpot(TM) Client VM (16.0-b13) for windows-x86 JRE (1.6.0_18-b07), built on Dec 17 2009 13:35:55 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sat Apr 17 23:49:54 2010
+elapsed time: 9 seconds
+

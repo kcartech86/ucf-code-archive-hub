@@ -1,0 +1,210 @@
+         body
+         {
+            font-family: 'Asap', sans-serif;
+            width: 960px;
+            margin: 0 auto;
+            background-color: #CCC7B0;
+         }
+         h1
+         {
+            color: #878777;
+            text-align: center;
+            font-size: 3em;
+         }
+         #html5
+         {
+            position: absolute;
+            top: 18px;
+            right: 3px;
+            -webkit-transform: rotate(30deg);
+            -moz-transform:rotate(30deg);
+            overflow: none;
+         }
+         #searchContent
+         {
+            text-align: center;
+         }
+         #searchContent ul li
+         {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+         } 
+         #searchContent ul
+         {
+            padding: 0;
+            margin: 0;
+         } 
+         #searchContent input
+         {
+            width: 400px;
+            font-size: 2em;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            border-radius: 15px;
+            outline: none;
+         } 
+         #searchContent ul li button
+         {
+            background: #3A3A33;
+            color: #fff;
+            font-size: 2em;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            border-radius: 15px;
+            padding: 10px 50px;
+            border-left: 2px solid #BABAA4;
+            border-top: 2px solid #BABAA4;
+            border-right: 2px solid #878777;
+            border-bottom: 2px solid #878777;
+            cursor: pointer;
+         }
+         #searchContent ul li button:active
+         {
+            border-right: 2px solid #BABAA4;
+            border-bottom: 2px solid #BABAA4;
+            border-top: 2px solid #878777;
+            border-left: 2px solid #878777;
+         }
+         #photoContainer ul li 
+         {
+            list-style: none;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            float: left;
+            padding: 10px;
+            margin: 10px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            border: 2px solid rgba(100, 100, 100, 0.2);
+         }
+         #photoContainer
+         {
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            border: 2px solid #DDD;
+            overflow: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+         }
+         #photoContainer ul
+         {
+            display: none;
+         }
+         #photoContainer p
+         {
+            text-align: center;
+         }
+         #photoContainer ul li:hover 
+         {
+            background: rgba(176, 176, 176, 0.4);
+            border: 2px solid rgba(200, 200, 200, 0.2);
+            cursor: pointer;
+         }
+         #popupback { 
+            background:#000000; 
+            opacity:.5; 
+            z-index:10; 
+            position:fixed; 
+            left:0; 
+            top:0; 
+            margin-top:-21px; 
+         }
+         #popup { 
+            background:#3A3A33; 
+            z-index:100; 
+            position:absolute; 
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            min-width: 100px;
+            color: #fff;
+         }
+         .loading_popup
+         {
+            height: 60px;
+            padding: 20px;
+         }
+         #photoInfo
+         {
+            display: none;
+         }
+         #photoInfo ul
+         {
+            margin: 0;
+            padding: 0;
+         }
+         #photoInfo ul li
+         {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            padding-top: 10px;
+         }
+         .close
+         {
+            cursor: pointer;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            display: block;
+            background: #17150D;
+            border-radius: 100px;
+            padding: 0px 5px 3px 5px;
+            font-size: 1.1em;
+            border: 2px solid white;
+            width: .8em;
+            text-align: center;
+            font-weight: bold;
+         }
+         /* PRE LOADER */
+         .ball {
+            background-color: rgba(0,0,0,0);
+            border:5px solid rgba(135, 135, 119,0.9);
+            opacity:.9;
+            border-top:5px solid rgba(0,0,0,0);
+            border-left:5px solid rgba(0,0,0,0);
+            border-radius:50px;
+            box-shadow: 0 0 35px #878777;
+            width:50px;
+            height:50px;
+            margin:0 auto;
+            -moz-animation:spin .5s infinite linear;
+            -webkit-animation:spin .5s infinite linear;
+         }
+         .ball1 {
+            background-color: rgba(0,0,0,0);
+            border:5px solid rgba(135, 135, 119,0.9);
+            opacity:.9;
+            border-top:5px solid rgba(0,0,0,0);
+            border-left:5px solid rgba(0,0,0,0);
+            border-radius:50px;
+            box-shadow: 0 0 15px #878777; 
+            width:30px;
+            height:30px;
+            margin:0 auto;
+            position:relative;
+            top:-50px;
+            -moz-animation:spinoff .5s infinite linear;
+            -webkit-animation:spinoff .5s infinite linear;
+         }
+         @-moz-keyframes spin {
+            0% { -moz-transform:rotate(0deg); }
+            100% { -moz-transform:rotate(360deg); }
+         }
+         @-moz-keyframes spinoff {
+            0% { -moz-transform:rotate(0deg); }
+            100% { -moz-transform:rotate(-360deg); }
+         }
+         @-webkit-keyframes spin {
+            0% { -webkit-transform:rotate(0deg); }
+            100% { -webkit-transform:rotate(360deg); }
+         }
+         @-webkit-keyframes spinoff {
+            0% { -webkit-transform:rotate(0deg); }
+            100% { -webkit-transform:rotate(-360deg); }
+         }

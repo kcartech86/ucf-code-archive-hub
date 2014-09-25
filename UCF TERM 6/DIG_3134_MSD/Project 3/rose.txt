@@ -1,0 +1,53 @@
+<?php
+// Dice roller for Petals around the Rose Game
+// JMM 22 Sept 2009
+
+function dice()
+{
+	$n=rand(1,6);
+	$handle="d$n".".gif";
+	print "<img src='$handle'>";
+}
+
+function headline()
+{
+	print '<h2>Petals Around The Rose</h2>
+	<h3>J. M. Moshell - 22 September 2009 - DIG 2821 at the University of Central Florida</h3>
+	<p>
+	<strong>The Rules:</strong>
+	<p>
+	<ol>
+	<li>The name of the game is <em>Petals Around the Rose</em></li>
+	<li>The name of the game is significant.</li>
+	<li>The answer is always zero or an even integer.</li>
+	<li>Once you have figured out the pattern, you are sworn to secrecy and you MAY NOT tell anyone the pattern</li>
+	<li>If you violate the above rule, you will turn into a turtle.</li>
+	</ol>
+	</p><p>
+	<strong>The Procedure:</strong>
+	<ol>
+	<li>I will roll the dice and, and tell you how many Petals there are.</li>
+	<li>I will do this as many times as you ask me to, by saying "Roll".</li>
+	<li>You form a hypothesis. Write it down, in Formalized Hypothesis terms.</li>
+	<li>To test your hypothesis, say "Test". I will roll the dice but NOT tell you the number.</li>
+	<li>You then tell us the number that is predicted by your hypothesis, and I say "Right" or "Wrong".</li>
+	<li>Remember the Rules. When your group has confirmed your hypothesis, KEEP IT TO YOURSELVES.</li>
+	</ol>
+	</p>';
+} # headline
+
+############ MAIN PROGRAM #############
+
+	print "<html><head><title>Petals Around the Rose</title></head><body>";
+	print "<form type='post' action='rose.php'>";
+	headline();
+	
+	for ($i=1; $i<=5; $i++)
+	{
+		dice();
+		// if ($i==3) print "<br />";
+	}
+		
+	print "<input type='submit' name='next' value='THROW THE DICE'>";
+	
+	print "</form></body></html>";

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>05 SET TIMEOUT</title>
+        <script type="text/javascript">
+			function changeColor() {
+				var r, g, b;
+				var display = document.getElementById("display");
+				var random_red = Math.ceil(255*Math.random());
+				var random_green = Math.ceil(255*Math.random());
+				var random_blue = Math.ceil(255*Math.random());
+				display.style.color = "rgb(" + random_red + "," + random_green + "," + random_blue + ")";
+			}
+			function prepareTimers() {
+				setTimeout(changeColor, 2000);
+			}
+			function prepareEvents() {
+				document.getElementById('change').onclick = prepareTimers;
+			}
+			window.onload = prepareEvents;
+		</script>
+    </head>
+
+    <body>
+        <p id="display">This color should change after 2000 milliseconds (2 seconds) when you click the link below!</p>
+
+		<input id="change" type="button" value="click to change color" />
+    </body>
+</html>

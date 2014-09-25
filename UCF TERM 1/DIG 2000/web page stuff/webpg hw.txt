@@ -1,0 +1,23 @@
+<!--Use this as a template when you are starting a webpage -->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+
+    <title>Web Page Assignment 2</title>
+  </head>
+
+	<style type= "text/css">
+		
+		p#pgraph {    }
+		
+		
+	</style>
+
+  <body>
+  </body>
+
+</html>

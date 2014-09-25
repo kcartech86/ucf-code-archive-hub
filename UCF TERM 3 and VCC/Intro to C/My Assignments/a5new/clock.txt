@@ -1,0 +1,39 @@
+2
+John Slacker 5.15
+Jane Worker 10.00
+10
+5
+Worker Jane 9 0 13 45
+Slacker John 10 50 18 10
+Slacker John 7 30 13 30
+Worker Jane 8 30 18 50
+Slacker John 12 20 13 20
+4
+Worker Jane 8 0 18 0
+Worker Jane 8 0 19 0
+Worker Jane 8 0 19 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0
+2
+Slacker John 10 0 15 0
+Worker Jane 8 0 20 0

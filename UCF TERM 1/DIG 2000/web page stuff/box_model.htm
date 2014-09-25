@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+<TITLE>Interactive CSS Box Model Demo</TITLE>
+<style>
+
+body {
+	background: url(../images/fillheaderbg.gif) repeat-x;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size: 76%;
+	line-height: 1.2;
+	margin: 0px;
+	padding: 2em 0 0 10%;
+}
+
+/* very style */
+
+
+p {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+div {
+	margin-left: 50px;
+	width: 550px;
+}
+dl {
+	text-align: right;
+}
+</style>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-213070-1";
+urchinTracker();
+</script>
+
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<div style="height: 70px;"></div>
+<div style="position: absolute; top: 0; left: 0; width: 100%;">
+<a href="/tstme/"><img style="border:0;" src="../images/fullheader.gif" alt="Return to tstme" /></a>
+</div>
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="650" HEIGHT="390" id="BoxModel" ALIGN="">
+ <PARAM NAME=movie VALUE="Box_Model.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#FFFFFF> <EMBED src="Box_Model.swf" quality=high bgcolor=#FFFFFF  WIDTH="650" HEIGHT="390" NAME="BoxModel" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
+</OBJECT>
+<div>
+<p>This is my Basic CSS Box Model Demo, inspired by the good <a href="http://www.hicksdesign.co.uk/journal/2004/05/3d_css_box_model/index.php">Jon Hicks</a>.</p>
+<p>Basically, drag the scrolly thing, and you get to see the padding/margins thing in faux-3D.</p>
+<p>The W3C diagram looks like <a href="http://www.w3.org/TR/REC-CSS2/box.html#box-dimensions">this</a></p>
+<p>I first fully understood the box model when I saw <a href="http://www.brainjar.com/css/positioning/default.asp">this page at Brain Jar</a>. To date, that is the best demonstration of how this all should work that I've seen. Read it all.</p>
+<p>Normally I would do this sort of stuff in a nice XHTML 1.0 document, but I'm being a tad lax at the moment. Find me a browser where it doesn't work and I migh think about an update!</p>
+<p>IE, as you would expect, likes to be the individual. That's a nice way of saying it doesn't handle borders the same as everyone else. This only really matters if you are doing dashed borders, and you probably shouldn't be using them anyway because they are ugly! But regardless, here is the info you need to get them working: <a href="http://www.pixelmech.com/index.php?id=P54">Tom's site</a>.
+<p>Best of luck,<br />
+<a href="mailto:douglas-borders@redmelon.net">Douglas</a></p>
+<dl>
+<dt>Other stuff you can see at tstme:</dt>
+<dd><a href="http://www.redmelon.net/tstme/roll/">CSS Rollovers</a></dd>
+<dd><a href="http://www.redmelon.net/tstme/3cols2/">Some full height columns</a></dd>
+<dd><a href="http://www.redmelon.net/tstme/4corners/">Some CSS rounded corners</a></li></dd>
+</dl>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-213070-3";
+urchinTracker();
+</script>
+</BODY>
+</HTML>

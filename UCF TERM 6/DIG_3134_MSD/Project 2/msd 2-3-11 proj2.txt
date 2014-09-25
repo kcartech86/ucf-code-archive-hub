@@ -1,0 +1,24 @@
+THURSDAY FEB 10TH:
+PROJECT 1 DUE ON SULLEY
+
+PATH:  sulley.dm.ucf.edu/~ky775779/DIG3134/index.html
+
+project1 should be in this directory
+
+
+PROJECT # 2:
+
+Jeopardy...(Wheel of fortune)
+
+cliches in a file,
+the file will display boxes for the selected phrase(cliche)
+teams guess letters back and fourth until they can guess phrase
+or.
+
+Take in a text file that will detect phrases, print boxes, and * for spaces
+
+Additional Programming:
+-discover 20 characters, break for a new line if >20
+-keep track of teams turn
+-creativity, suggested features you could add, or add your own features
+-graphical representation through html?

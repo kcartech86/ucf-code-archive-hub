@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+        @import url("styles.css");
+		
+    
+</style>
+
+<script type="text/javascript">
+function showPic(whichpic) {
+				var source = whichpic.getAttribute('href');
+				var placeholder = document.getElementById('image_placeholder');
+				placeholder.setAttribute('src',source);
+			}
+			function newImage() {
+				
+			}
+			function newCaption() {
+				
+			}
+			window.onload = newImage;
+        </script>
+    </head>
+<body>
+   	<div id="container">
+
+        	<ul style="list-style-type: none; margin:0; padding:0;">
+            	<li>
+   	  			  <a href="IMG_2588.jpg" onclick="showPic(this); return false;">
+               	  <img src="IMG_2588_thumb.png" width="158" height="126" alt="thumb1" />
+                  </a>
+                </li>
+            	<li>
+                	<a href="IMG_2589.jpg"
+                       onclick="showPic(this); return false;"
+                       title="picture 2">
+                       <img src="IMG_2589_thumb.png" width="158" height="126" alt="thumb2" /> </a>
+
+                </li>
+            	<li>
+                	<a href="IMG_2637.jpg" 
+                       onclick="showPic(this); return false;"
+                       title="picture 3">
+                    <img src="IMG_2637_thumb.png" width="158" height="126" alt="thumb3" /></a>
+                </li>
+            	<li>
+                	<a href="IMG_2656.jpg"
+                       onclick="showPic(this); return false;"
+                       title="picture 4">
+                    <img src="IMG_2656_thumb.png" width="158" height="126" alt="thumb4" /> </a>
+
+                </li>
+            </ul>
+            
+			
+   	</div>
+    
+    <div id="image_placeholder_div">
+		<img id="image_placeholder" src="" alt="gallery placeholder" />
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>DIG4503 – Kyle Cartechine – Semester Project</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />	
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Kaushan+Script|Actor'  type='text/css'>
+    
+    <link rel="icon" href="favicon.png" type="image/gif" sizes="16x16" />
+
+	
+	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+   	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/semesterProject.js"></script>
+    
+     
+</head>
+
+<body>
+	<div class="container"> 
+       
+		<div class="row">
+        	<div class="threecol">
+            	<img src="img/ri_logo.png" alt="Ri Logo">
+            </div>
+            <div id="header" class="ninecol last">
+				<img src="img/ri_header.png" id="headimg" alt="Research It Website Header">
+            </div>
+        </div>
+        
+        <div class="row">
+        	<div class="onecol">
+            </div>
+            <div class="tencol">                
+                <p class="littletext">
+                    The quick access research helper that combines wikipedia and google books in one page!
+                </p>
+			</div>
+            <div class="onecol last">
+            </div>
+        </div>	
+    
+            
+        <div class="row">
+            <div class="fourcol">
+               	<img src="img/wikipediaLogo.png" width="561" height="209" alt="Wikipedia Logo">
+            </div>
+            <div class="fourcol" id="formDiv">
+                <form method="post" action="">
+                    <fieldset>
+                        <label for="searchTerm">Enter a term you would like to begin researching using Google Books and Wikipedia.</label>
+                        <input type="text" name="searchTerm" id="searchTerm" value="">
+                        <input type="submit" name="submit" id="submit" value="Search">		
+                    </fieldset>
+                </form>
+            </div>
+            <div class="fourcol last">
+               	<img src="img/gBookLogo.jpg" width="561" height="209" alt="Google Books">
+            </div>
+		</div>    
+    
+        <div class="row">
+            <div id="wikiholder"class="sixcol">
+                <h2>Wikipedia Results</h2>
+                <div id="wikiDiv">
+                
+            	</div>
+                <div id="wikiviewer">
+                
+                </div>
+
+            </div>
+            <div id="bookholder" class="sixcol last">
+                <h2>Google Books Results</h2>
+                <div id="bookDiv">
+                
+            	</div>
+                <div id="bookveiwer">
+            
+            	</div>
+            </div>
+        </div>
+    
+               
+        
+	</div>
+    
+</body>
+
+</html>

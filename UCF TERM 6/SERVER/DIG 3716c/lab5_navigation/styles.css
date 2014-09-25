@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family:Helvetica,sans-serif;
+	font-size:12px;
+}
+
+ul#menu_horiz {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+ul#menu_horiz li {
+	background-color:#cccccc;
+	float:left;
+}
+
+ul#menu_horiz li a {
+	text-decoration:none;
+	color:#000;
+	display:block;
+	float:left;
+	margin:0;
+	padding:20px 5px;
+	text-align:center;
+	
+	
+}
+ul#menu_horiz li a:hover {
+	color:#FFF;
+	border:1px solid #900;
+	-moz-border-radius: 4px;
+	vertical-align:middle;
+	background: -moz-linear-gradient(90deg,#b8574f,#d57d63);
+	margin:10px 0px;
+	padding:9px 4px;
+}
+

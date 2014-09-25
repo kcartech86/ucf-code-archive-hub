@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>04b JS ONLOAD - SHOW RANDOM TEXT FROM ARRAY</title>
+        <script type="text/javascript">
+			function showRandom() {
+				var my_text = Array("item1","item2","item3","item4","item5");
+				var display = document.getElementById("random");
+				
+				if (display.firstChild != null) {
+					var text_node_to_remove = display.firstChild;
+					display.removeChild(text_node_to_remove);
+				}
+				
+				var random_number = Math.floor(5*Math.random());   // give me a random number 0-4
+				var new_text_node = document.createTextNode(my_text[random_number]);
+				display.appendChild(new_text_node);
+			}
+			
+			window.onload = showRandom;     /* notice that I didn't write showRandom();
+											   by leaving off the (), only referencing the function, not
+											   executing it.  If I execute it right here in the document <head>,
+											   p#random won't exist yet and I'll get an error. */
+		</script>
+    </head>
+
+    <body>
+        <p id="random"></p>
+    
+    </body>
+</html>
+
+
+
+									   
+			
+/*			function preloader() 
+			{
+				 // counter
+				 var i = 0;			
+			
+				 // create object
+				 imageObj = new Image();			
+			
+				 // set image list
+				 images = new Array();
+				 images[0]="image1.jpg"
+				 images[1]="image2.jpg"
+				 images[2]="image3.jpg"
+				 images[3]="image4.jpg"
+			
+			
+				 // start preloading
+				 for(i=0; i<=3; i++) 
+				 {
+					  imageObj.src=images[i];
+				 }		
+			
+			} */

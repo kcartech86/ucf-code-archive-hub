@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>
+		Kyle Cartechine - Lab 8 - COP2500
+	</title>
+	<style type="text/css">
+	
+	table, tr, td{
+		font-family: monospace, Arial, Serif;
+		border: 2px solid red;
+	    border-collapse:collapse;
+		padding:10px;
+		margin:10px;	
+	}
+	
+	</style>
+	
+</head>
+
+<body>
+	<script type="text/javascript">
+//Start Part 1 ///////////////////////////////////////////////////////////	
+		document.write("Part 1: Using 2d Arrays to Draw a Z Shape");
+		var matrixZ = new Array(5);
+		var i, space, x, y;
+		for(i=0; i<5; i++){
+			matrixZ[i] = new Array(5);
+		}
+		//Initialize the matrix to all blanks
+		space = '&nbsp;';
+		for(x=0; x<5; x++){
+			for(y=0; y<5; y++){
+				matrixZ[x][y] = space;
+			}
+		}
+		//Draw the  Z components
+		for(x=0; x<5; x++){
+			matrixZ[0][x] = 1;
+		}//top row
+		
+		for(x=0; x<5; x++){
+			matrixZ[4][x] = 1;
+		}//bottom row
+		
+		x=1;
+		for(y=3; y>0; y--){
+			matrixZ[x][y] = 1;
+			x++;
+			
+		}//Antidiagonal
+		
+		//Printing it all
+		document.write("<table>");
+		for(x=0; x<5; x++){
+			document.write("<tr>");
+			for(y=0; y<5; y++){
+				document.write("<td>");	
+				document.write( matrixZ[x][y] );
+				document.write("</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+//End Part 1 //////////////////////////////////////////////////////////	
+
+//Start Part 2/////////////////////////////////////////////////////////	
+		
+		document.write("Part 2: Using 2d Arrays to Draw a N Shape");
+		var matrixN = new Array(5);
+		for(i=0; i<5; i++){
+			matrixN[i] = new Array(5);
+		}
+		//Initialize the matrix to all blanks
+		space = '&nbsp;';
+		for(x=0; x<5; x++){
+			for(y=0; y<5; y++){
+				matrixN[x][y] = space;
+			}
+		}
+		//Draw the  N components
+		for(x=0; x<5; x++){
+			matrixN[x][0] = 1;
+		}//left column
+		
+		for(x=0; x<5; x++){
+			matrixN[x][4] = 1;
+		}//right column
+		
+		
+		for(x=1; x<4; x++){
+			matrixN[x][x] = 1;			
+		}//Diagonal
+		
+		//Printing it all
+		document.write("<table>");
+		for(x=0; x<5; x++){
+			document.write("<tr>");
+			for(y=0; y<5; y++){
+				document.write("<td>");	
+				document.write( matrixN[x][y] );
+				document.write("</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</body>
+
+</html>

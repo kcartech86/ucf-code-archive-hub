@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+ <head>  
+   <title>DOM Event Example</title>  
+   <style type="text/css">  
+     #t { border: 1px solid red }  
+     #t1 { background-color: pink; }  
+   </style>  
+   <script type="text/javascript">  
+  
+   // Function to change the content of t2  
+   function modifyText(new_text) {  
+     var t2 = document.getElementById("t2");  
+     t2.firstChild.nodeValue = new_text;      
+   }  
+   
+   // Function to add event listener to t  
+   function load() {   
+     var el = document.getElementById("t");   
+     el.addEventListener("click", function(){modifyText("four")}, false);   
+   }   
+  
+   </script>   
+ </head>   
+ <body onload="load();">   
+ <table id="t">   
+   <tr><td id="t1">one</td></tr>   
+   <tr><td id="t2">two</td></tr>   
+ </table>   
+ </body>   
+ </html>

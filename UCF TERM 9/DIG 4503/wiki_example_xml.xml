@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<SearchSuggestion xmlns="http://opensearch.org/searchsuggest2" version="2.0">
+	<Query xml:space="preserve">harrison</Query>
+	<Section>
+		<Item>
+			<Text xml:space="preserve">Harrison Ford</Text>
+			<Description xml:space="preserve">Harrison Ford (born July 13, 1942) is an American film actor and producer. 
+			</Description>
+			<Url xml:space="preserve">http://en.wikipedia.org/wiki/Harrison_Ford</Url>
+			<Image source="http://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Harrison_Ford_C%C3%A9sars_2010.jpg/40px-Harrison_Ford_C%C3%A9sars_2010.jpg" width="40" height="50"/>
+		</Item>
+		
+		<Item>
+			<Text xml:space="preserve">Harrisonburg, Virginia</Text>
+			<Description xml:space="preserve">Harrisonburg is an independent city in the Shenandoah Valley region of Virginia in the United States.</Description>
+			<Url xml:space="preserve">http://en.wikipedia.org/wiki/Harrisonburg,_Virginia</Url>
+			<Image source="http://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Rockingham_County_Courthouse.JPG/50px-Rockingham_County_Courthouse.JPG" width="50" height="38"/>
+		</Item>
+		
+		<Item>
+			<Text xml:space="preserve">Harrison, New Jersey</Text>
+			<Description xml:space="preserve">Harrison is a town in Hudson County, New Jersey, United States. </Description>
+			<Url xml:space="preserve">http://en.wikipedia.org/wiki/Harrison,_New_Jersey</Url>
+		</Item>
+		
+		<Item>
+			<Text xml:space="preserve">Harrison Birtwistle</Text>
+			<Description xml:space="preserve">Sir Harrison Paul Birtwistle CH (born 15 July 1934) is a British contemporary composer.</Description>
+			<Url xml:space="preserve">http://en.wikipedia.org/wiki/Harrison_Birtwistle</Url>
+			<Image source="http://upload.wikimedia.org/wikipedia/en/thumb/0/06/Harrison_Birtwistle_%28cropped%29.jpg/37px-Harrison_Birtwistle_%28cropped%29.jpg" width="37" height="50"/>
+		</Item>
+		
+		<Item>
+			<Text xml:space="preserve">Harrison's Reports and Film Reviews</Text>
+			<Description xml:space="preserve">Harrison's Reports and Film Reviews is the 15-volume reprint of the complete run of the weekly magazine Harrison's Reports from its founding in 1919 to its demise in 1962. Volumes 1 through 14 are facsimile reprints of the more than 2,000 weekly issues. </Description>
+			<Url xml:space="preserve">http://en.wikipedia.org/wiki/Harrison%27s_Reports_and_Film_Reviews</Url>
+		</Item>
+	</Section>
+</SearchSuggestion>
+

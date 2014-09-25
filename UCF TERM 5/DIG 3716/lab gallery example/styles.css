@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+  
+#container{
+	height:200px;
+	width:750px;
+	float:left;
+	
+}
+
+#image_placeholder_div{
+	position:fixed;
+	left:400px;
+	top:100px;
+	
+	
+}

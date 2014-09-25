@@ -1,0 +1,27 @@
+PuTTY download!!
+
+[Host Name] sulley.dm.ucf.edu
+[Port]      22
+hit open to begin
+
+login as:   enter user name (NID)
+password:  default??
+
+WinSCP
+[host name]
+[user name]
+[password]
+public_html - put hw in this folder
+
+dig2000_01
+
+http://sulley.dm.ucf.edu/~jpittard/dig2000_01/
+
+Recommend : make a folder in public_html folder called dig2000/ file name of hw2
+
+PEGASUS
+pegasus.cc.ucf.edu
+
+winzip
+
+post on wordpress with zip files

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html >
+
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<title>
+		Kyle Cartechine - Lab 2 - COP2500
+	</title>
+
+	<!-- Kyle Cartechine --> 
+	<!-- kcartechine@knights.ucf.edu --> 
+	<!-- Lab 02 -->
+	
+	<style type="text/css">
+		h1{
+		color:blue;
+		background-color:black;
+		font-size:16px;
+		padding:15px;
+		text-align:center;
+		}
+		h2{
+		color:black;
+		background-color:red;
+		font-size:16px;
+		padding:15px;
+		text-align:center;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript" charset="UTF-8">
+	///////*START Far2Cent*///////
+	//Variables can be declared and initialized in the same line
+	var far1 = 32;
+	var far2 = 78;
+	var far3 = 212;
+
+	//Do the computation within the initialization
+	var cent1 = (5*(far1 - 32)/9);
+	var cent2 = (5*(far2 - 32)/9);
+	var cent3 = (5*(far3 - 32)/9);
+	</script>
+	<h1>
+		<script type="text/javascript" charset="UTF-8">
+			document.write("Fahrenheight to Centigrade Conversion [Fahr2Cent()]<br />");
+		</script>
+	</h1>
+
+	<script type="text/javascript" charset="UTF-8">
+	//Print the results
+	document.write("If the temperature outside is "+far1+"&deg; Fahrenheit,<br /> then it would also be "+cent1+"&deg; Centigrade.<br /><br />");
+	//To make the centigrade decimal only show 2 digits after the decimal point I used the built in toFixed() function.
+	document.write("If the temperature outside is "+far2+"&deg; Fahrenheit,<br /> then it would also be "+cent2.toFixed(2)+"&deg; Centigrade.<br /><br />");
+	document.write("If the temperature outside is "+far3+"&deg; Fahrenheit,<br /> then it would also be "+cent3+"&deg; Centigrade.<br /><br />");
+	</script>
+	
+	<h2>
+		<script type="text/javascript" charset="UTF-8">
+			document.write("Price Including Tax [PriceCalc()]<br>");
+		</script>
+	</h2>
+	<script type="text/javascript" charset="UTF-8">
+	///////*END Fahr2Cent*///////
+
+	///////*START PriceCalc*///////
+	// Declare variables
+	var subtotal, taxrate, salestax, total;
+
+	//Initialize variables
+	taxrate = 0.06;
+	subtotal = 57.24;
+	salestax = subtotal * taxrate; 
+	salestax = Math.round(salestax * 100 ); 
+	salestax = salestax / 100; 
+	total = subtotal + salestax;
+
+	//Print the results
+	document.write("If the subtotal of an item is "+subtotal+",<br /> then with sales tax it will cost "+total+".<br />");
+
+	//A better alternative:
+	/* //Uncomment to try it.
+	taxrate2 = 1.06;
+	OCtaxrate = 1.065;
+	subtotal = 57.24;
+	total = subtotal*taxrate2;
+	total2 = subtotal*OCtaxrate;
+	document.write("If the subtotal of an item is "+subtotal+",<br /> then with sales tax it will cost "+total.toFixed(2)+".<br /><br />");
+	document.write("If the subtotal of an item is "+subtotal+",<br /> then with Orange County sales tax it will cost "+total2.toFixed(2)+".");
+	*/
+	///////*END PriceCalc*///////
+	</script>
+    <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+    </p>
+</body>
+
+</html>

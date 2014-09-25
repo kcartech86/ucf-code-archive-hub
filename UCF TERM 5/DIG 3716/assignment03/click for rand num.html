@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>03 JS RANDOM</title>
+        <style type="text/css">
+			p {
+				display: inline;
+			}
+		</style>
+        <script type="text/javascript">
+			function showRandom() {
+				var display = document.getElementById("random");
+				
+				if (display.firstChild != null) {
+					var text_node_to_remove = display.firstChild;
+					display.removeChild(text_node_to_remove);
+				}
+				
+				var random_number = 100*Math.random();
+				var new_text_node = document.createTextNode(random_number);
+				display.appendChild(new_text_node);
+			}
+			function showRandomInteger() {
+				var display = document.getElementById("random_int");
+				
+				if (display.firstChild != null) {
+					var text_node_to_remove = display.firstChild;
+					display.removeChild(text_node_to_remove);
+				}
+				
+				var random_number = Math.ceil(100*Math.random());
+				var new_text_node = document.createTextNode(random_number);
+				display.appendChild(new_text_node);
+			}
+		</script>
+    </head>
+
+    <body>
+
+        
+        
+        <a href="#" onclick="showRandom();">Click to display a random number</a>
+        <p id="random"></p>
+        
+        <br /><br />
+
+        <a href="#" onclick="showRandomInteger();">Click to display a random integer</a>
+        <p id="random_int"></p>
+
+    </body>
+</html>

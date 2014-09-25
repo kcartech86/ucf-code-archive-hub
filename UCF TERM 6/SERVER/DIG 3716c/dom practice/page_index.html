@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Validating Text On Submit</title>
+		<script type="text/javascript">
+			function processForm(event) {
+				if(document.myform.first_name_name.value.length > 0) {
+					var animage = document.createElement('img');
+					animage.setAttribute("id","valid_img");
+					animage.setAttribute("src","img/check.gif");
+					animage.setAttribute("alt","check mark");
+					var thisParent = document.getElementById('firstname');
+					thisParent.appendChild('animage');
+
+				} else {
+					alert("first name is invalid!");
+				}
+				
+				if(document.myform.last_name_name.value.length > 0) {
+					alert("last name is valid!");
+				} else {
+					alert("last name is invalid!");
+				}
+				event.preventDefault();
+			}
+			function setupForm() {
+				var forms = document.getElementsByTagName('form');
+				forms[0].addEventListener('submit',processForm,false);
+			}
+			window.onload = function() {
+				setupForm();
+			}
+		</script>
+    </head>
+    
+    <body>
+        <form method="post" name="myform">
+            <fieldset>
+                <legend>Entering User Info</legend>
+					<div id="firstname">
+	                <label for="first_name_id">First Name:</label>
+	                <input id="first_name_id" type="text" name="first_name_name" value="" />
+                    
+					</div>
+					<div id="lastname">
+	                <label for="last_name_id">Last Name:</label>
+	                <input id="last_name_id" type="text" name="last_name_name" value="" />
+					</div>
+					<div>
+	                <input id="submit" type="submit" name="submit" value="Click to Submit" />
+					</div>
+            </fieldset>
+        </form>
+    </body>
+</html>
