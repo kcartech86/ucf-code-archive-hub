@@ -1,0 +1,169 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Kyle Cartechine</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="themes/doonesbury_theme.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" />
+    <style type="text/css">@import url('css/styles.css');</style>
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+       
+	<script type="text/javascript">
+         $('div.ui-page').live("swipeleft", function(){
+        var nextpage = $(this).next('div[data-role="page"]');
+        // swipe using id of next page if exists
+        if (nextpage.length > 0) {
+        $.mobile.changePage(nextpage, 'slide');
+        }
+        });
+        $('div.ui-page').live("swiperight", function(){
+        var prevpage = $(this).prev('div[data-role="page"]');
+        // swipe using id of next page if exists
+        if (prevpage.length > 0) {
+        $.mobile.changePage(prevpage, {transition:"slide", reverse:true});
+        }
+        });
+    </script>
+    
+</head> 
+
+<body>
+
+<!-- Start of popup menu --------------------------------------------------------------------------------------->
+<div id="comicmenu">
+
+	<div data-role="header">
+		<h1>Select A Comic:</h1>
+	</div><!-- /header -->
+
+<div data-role="content">	
+		<div data-role="controlgroup">
+            <a href="dilbert.html" rel="external" data-role="button">Dilbert</a>
+            <a href="doonesbury.html" data-role="button">Doonesbury</a>
+            <a href="garfield.html" rel="external" data-role="button">Garfield</a>
+            <a href="penny arcade.html" rel="external" data-role="button">Penny Arcade</a>
+            <a href="project1.html" rel="external" data-role="button">Popeye</a>
+            <a href="vgcats.html" rel="external" data-role="button">VG Cats</a>            
+        </div>	
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		<h4>Comic Selection Menu</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of first page --------------------------------------------------------------------------------------->
+<div data-role="page" id="page1" data-fullscreen="true" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Quick Qomics</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" >
+    	<h2>Doonesbury</h2>
+        <div class="panel">
+        	<img src="img/doones001.png" width="288" height="379" alt="doonesbury01">
+        </div>
+  </div><!-- /content -->
+
+	  
+    <div data-id="mynavfooter" data-role="footer" data-position="fixed">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#page1" data-role="button" data-icon="back" data-iconpos="left" data-direction="reverse">Back</a></li>
+            	<li><a href="#comicmenu" data-rel="dialog" data-transition="pop" data-role="button"  data-icon="grid" data-iconpos="top">Menu</a>
+                <li><a href="#page2" data-role="button" data-icon="forward" data-iconpos="left" >Next</a></li>
+        	</ul>
+		</div>
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+
+<!-- Start of second page -------------------------------------------------------------------------------------->
+<div data-role="page" id="page2" data-fullscreen="true" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Quick Qomics</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" >
+    	<h2>Doonesbury 2</h2>
+        <div class="panel">
+			<img src="img/doones002.png" width="288" height="379" alt="doonesbury02">
+        </div>
+    </div><!-- /content -->
+
+	  
+    <div data-id="mynavfooter" data-role="footer" data-position="fixed">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#page1" data-role="button" data-icon="back" data-iconpos="left" data-direction="reverse">Back</a></li>
+            	<li><a href="#comicmenu" data-rel="dialog" data-transition="pop" data-role="button"  data-icon="grid" data-iconpos="top">Menu</a>
+                <li><a href="#page3" data-role="button" data-icon="forward" data-iconpos="left" >Next</a></li>
+        	</ul>
+		</div>
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+<!-- Start of 3 -------------------------------------------------------------------------------------->
+<div data-role="page" id="page3" data-fullscreen="true" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Quick Qomics</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" >
+    	<h2>Doonesbury 3</h2>
+        <div class="panel">
+   	    	<img src="img/doones003.png" width="288" height="379" alt="doonesbury03">
+        </div>
+  </div><!-- /content -->
+
+	  
+    <div data-id="mynavfooter" data-role="footer" data-position="fixed">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#page2" data-role="button" data-icon="back" data-iconpos="left" data-direction="reverse">Back</a></li>
+            	<li><a href="#comicmenu" data-rel="dialog" data-transition="pop" data-role="button"  data-icon="grid" data-iconpos="top">Menu</a>
+                <li><a href="#page4" data-role="button" data-icon="forward" data-iconpos="left" >Next</a></li>
+        	</ul>
+		</div>
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+
+<!-- Start of 4 -------------------------------------------------------------------------------------->
+<div data-role="page" id="page4" data-fullscreen="true" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Quick Qomics</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" >
+    	<h2>Doonesbury 4</h2>
+        <div class="panel">
+        	<img src="img/doones004.png" width="288" height="379" alt="doonesbury04">
+        </div>
+  </div><!-- /content -->
+
+	  
+    <div data-id="mynavfooter" data-role="footer" data-position="fixed">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#page3" data-role="button" data-icon="back" data-iconpos="left" data-direction="reverse">Back</a></li>
+            	<li><a href="#comicmenu" data-rel="dialog" data-transition="pop" data-role="button"  data-icon="grid" data-iconpos="top">Menu</a>
+                <li><a href="#page4" data-role="button" data-icon="forward" data-iconpos="left" >Next</a></li>
+        	</ul>
+		</div>
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+</body>
+
+</html>
